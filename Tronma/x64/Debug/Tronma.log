@@ -1,28 +1,32 @@
-﻿  SceneMain.cpp
-D:\VMK\UNI\C++\Tronma\Tronma\UI.h(31,20): warning C4305: “初始化”: 从“double”到“float”截断
-  (编译源文件“SceneMain.cpp”)
-  
-D:\VMK\UNI\C++\Tronma\Tronma\UI.h(52,20): warning C4305: “初始化”: 从“double”到“float”截断
-  (编译源文件“SceneMain.cpp”)
-  
+﻿  Enemy2.cpp
 D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.h(46,20): warning C4305: “初始化”: 从“double”到“float”截断
-  (编译源文件“SceneMain.cpp”)
+  (编译源文件“Enemy2.cpp”)
   
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(46,28): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(141,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(275,30): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(295,30): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(301,18): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(306,15): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(307,36): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(310,30): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(441,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(451,14): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(503,34): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+  Enemy3.cpp
 D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(37,19): warning C4305: “初始化”: 从“double”到“float”截断
-  (编译源文件“SceneMain.cpp”)
+  (编译源文件“Enemy3.cpp”)
   
 D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(38,21): warning C4305: “初始化”: 从“double”到“float”截断
-  (编译源文件“SceneMain.cpp”)
+  (编译源文件“Enemy3.cpp”)
   
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(18,20): warning C4305: “初始化”: 从“double”到“float”截断
-  (编译源文件“SceneMain.cpp”)
-  
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(42,21): warning C4305: “初始化”: 从“double”到“float”截断
-  (编译源文件“SceneMain.cpp”)
-  
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(43,20): warning C4305: “初始化”: 从“double”到“float”截断
-  (编译源文件“SceneMain.cpp”)
-  
-D:\VMK\UNI\C++\Tronma\Tronma\SceneMain.cpp(362,26): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\SceneMain.cpp(363,13): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(46,28): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(122,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(240,18): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(248,20): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(348,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(403,23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(435,23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+  正在生成代码...
+  LINK : 没有找到 D:\VMK\UNI\C++\Tronma\x64\Debug\Tronma.exe 或上一个增量链接没有生成它；正在执行完全链接
   Tronma.vcxproj -> D:\VMK\UNI\C++\Tronma\x64\Debug\Tronma.exe

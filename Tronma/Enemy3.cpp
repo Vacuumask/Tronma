@@ -70,7 +70,7 @@ void Bullet3::run(float* dt)
 
 bool Bullet3::collide()
 {
-	if (active == true && canDamage == true && alive == true && player->canBeDamaged == true) {
+	if (active == true && canDamage == true && alive == true) {
 		return !(x + c_x > player->x + player->c_x + player->c_width || x + c_x + c_width<player->x + player->c_x ||
 			y + c_y>player->y + player->c_y + player->c_height || y + c_y + c_height < player->y + player->c_y);
 	}
