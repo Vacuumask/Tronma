@@ -2,16 +2,7 @@
 
 Bullet3::Bullet3()
 {
-	width = 24;
-	height = 8;
-
-	c_x = 0;
-	c_y = 0;
-	c_width = 24;
-	c_height = 8;
-
-	loadPicture();
-	animationEnemy = new AnimationEnemy(&x, &y, pictures);
+	
 }
 
 Bullet3::~Bullet3()
@@ -24,6 +15,19 @@ Bullet3::~Bullet3()
 		delete animationEnemy;
 		animationEnemy = NULL;
 	}
+}
+
+void Bullet3::init() {
+	width = 24;
+	height = 8;
+
+	c_x = 0;
+	c_y = 0;
+	c_width = 24;
+	c_height = 8;
+
+	loadPicture();
+	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
 }
 
 void Bullet3::loadPicture()
@@ -39,7 +43,7 @@ void Bullet3::loadPicture()
 void Bullet3::run(float* dt)
 {
 	if (active == true) {
-		x -= *xspeed * 2.2 * *dt;
+		x -= *xspeed * 2.2 * *dt * Animation::p_speed;
 		if (alive == true) {
 			if (type == 1) {
 				animationEnemy->run(331);
@@ -54,7 +58,7 @@ void Bullet3::run(float* dt)
 			}
 		}
 
-		if (x <= -width) {
+		if (x <= -width || Enemy::EMP == true) {
 			isOver();
 		}
 
@@ -66,7 +70,7 @@ void Bullet3::run(float* dt)
 
 bool Bullet3::collide()
 {
-	if (active == true && canDamage == true && alive == true) {
+	if (active == true && canDamage == true && alive == true && player->canBeDamaged == true) {
 		return !(x + c_x > player->x + player->c_x + player->c_width || x + c_x + c_width<player->x + player->c_x ||
 			y + c_y>player->y + player->c_y + player->c_height || y + c_y + c_height < player->y + player->c_y);
 	}
@@ -95,7 +99,7 @@ bool Bullet3::attackedCollide()
 						}
 					}
 					break;
-				case 1:
+				default:
 					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
 						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
 						return true;
@@ -123,16 +127,7 @@ void Bullet3::isOver()
 
 Enemy3::Enemy3()
 {
-	width = 384;
-	height = 144;
-
-	c_x = 312;
-	c_y = 18;
-	c_width = 12;
-	c_height = 57;
-
-	loadPicture();
-	animationEnemy = new AnimationEnemy(&x, &y, pictures);
+	
 }
 
 Enemy3::~Enemy3()
@@ -144,6 +139,23 @@ Enemy3::~Enemy3()
 	if (animationEnemy != NULL) {
 		delete animationEnemy;
 		animationEnemy = NULL;
+	}
+}
+
+void Enemy3::init() {
+	width = 384;
+	height = 144;
+
+	c_x = 312;
+	c_y = 18;
+	c_width = 12;
+	c_height = 57;
+
+	loadPicture();
+	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+	for (int i = 0; i < bullet_Size; i++) {
+		bullet3[i].init();
 	}
 }
 
@@ -217,32 +229,40 @@ void Enemy3::loadPicture()
 void Enemy3::run(float* dt)
 {
 	if (active == true) {
-		x -= *xspeed * 1 * *dt;
+		x -= *xspeed * 1 * *dt * Animation::p_speed;
 		if (alive == true) {
-			if (isCharging == false) {
-				animationEnemy->run(31);
-				voidTime -= *dt;
-				if (voidTime <= 0) {
-					isCharging = true;
-					voidTime = 0.8;
+			if (Enemy::start == false) {
+				if (isCharging == false) {
+					animationEnemy->run(31);
+					voidTime -= *dt * *xspeed / 300;
+					if (voidTime <= 0) {
+						isCharging = true;
+						voidTime = 0.8;
+					}
+				}
+				else {
+					animationEnemy->run(32);
+					chargeTime -= *dt * *xspeed / 300;
+					if (chargeTime <= 0) {
+						isCharging = false;
+						chargeTime = 0.3;
+						if (Enemy::EMP == false) {
+							if (shootNum < 2) {
+								acquire(1);
+								shootNum++;
+							}
+							else {
+								acquire(2);
+								shootNum = 0;
+							}
+						}
+					}
 				}
 			}
 			else {
-				animationEnemy->run(32);
-				chargeTime -= *dt;
-				if (chargeTime <= 0) {
-					isCharging = false;
-					chargeTime = 0.3;
-					if (shootNum < 2) {
-						acquire(1);
-						shootNum++;
-					}
-					else {
-						acquire(2);
-						shootNum = 0;
-					}
-				}
+				animationEnemy->run(31);
 			}
+
 
 			if (collide()) {
 				damage();
@@ -251,6 +271,7 @@ void Enemy3::run(float* dt)
 		else {
 			animationEnemy->run(-3);
 		}
+		
 
 		if (x <= -width) {
 			isOver();
@@ -298,7 +319,7 @@ bool Enemy3::attackedCollide()
 						}
 					}
 					break;
-				case 1:
+				default:
 					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
 						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
 						return true;
@@ -316,6 +337,10 @@ void Enemy3::beDamaged()
 	canDamage = false;
 	alive = false;
 	isCharging = false;
+	if (Enemy::start == false) {
+		Player::kill_score += 50;
+		Player::kill[2]++;
+	}
 }
 
 void Enemy3::isOver()
@@ -327,6 +352,13 @@ void Enemy3::isOver()
 	alive = false;
 	isCharging = false;
 	shootNum = 0;
+}
+
+void Enemy3::bulletOver()
+{
+	for (int i = 0; i < bullet_Size; i++) {
+		bullet3[i].isOver();
+	}
 }
 
 void Enemy3::acquire(int bullet)
@@ -370,6 +402,8 @@ Enemy3Pool::Enemy3Pool(int& sceneWidth, float* speed, Player* player, int* sec_e
 		enemy3[i].player = player;
 		enemy3[i].start_x = sceneWidth;
 		enemy3[i].xspeed = speed;
+		enemy3[i].sec_enum = sec_enum;
+		enemy3[i].init();
 	}
 }
 
@@ -397,7 +431,12 @@ void Enemy3Pool::acquire(int sec)
 				break;
 
 			}
-			enemy3[i].x = enemy3[i].start_x;
+			if (Enemy::start == true) {
+				enemy3[i].x = 300 + sec * 120;
+			}
+			else {
+				enemy3[i].x = enemy3[i].start_x;
+			}
 			enemy3[i].active = true;
 			enemy3[i].canDamage = true;
 			enemy3[i].alive = true;
@@ -416,3 +455,13 @@ void Enemy3Pool::run(float* dt)
 		enemy3[i].run(dt);
 	}
 }
+
+void Enemy3Pool::isOver()
+{
+	for (int i = 0; i < pool_Size; i++) {
+		enemy3[i].isOver();
+		enemy3[i].animationEnemy->reset();
+		enemy3[i].bulletOver();
+	}
+}
+

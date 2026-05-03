@@ -1,5 +1,7 @@
 #include"Animation.h"
 
+float Animation::p_speed = 1.0f;
+
 Animation::Animation()
 {
     QueryPerformanceFrequency(&freq);

@@ -1,9 +1,10 @@
-#include"Game.h"
+#include "Game.h"
+#include "Audio.h"
 
 Game::Game()
 {
 	init();
-	changeScene(new SceneMain);
+	changeScene(sceneMenu);
 }
 
 Game::~Game()
@@ -18,7 +19,18 @@ void Game::run()
 		if (!isWindowAlive()) {
 			isRunning = false;
 		}
+		if (currentScene->startMenu == true) {
+			currentScene->startMenu = false;
+			changeScene(sceneMenu);
+		}
+		if (currentScene->startMain == true) {
+			currentScene->startMain = false;
+			changeScene(sceneMain);
+		}
 		currentScene->handleEvents();
+		if (currentScene->exitGame == true) {
+			break;
+		}
 	}
 	closegraph();
 	return;
@@ -29,8 +41,12 @@ void Game::init()
 	initgraph(widgetWidth, widgetHeight, EW_SHOWCONSOLE);
 	setbkcolor(BLACK);
 	cleardevice();
+	sceneMenu = new SceneMenu;
+	sceneMain = new SceneMain;
 	animation = new Animation;
+	MusicPlayer::init();
 }
+
 
 void Game::clean()
 {
@@ -47,9 +63,6 @@ void Game::clean()
 
 void Game::changeScene(Scene* scene)
 {
-	if (currentScene != NULL) {
-		delete currentScene;
-	}
 	currentScene = scene;
 }
 

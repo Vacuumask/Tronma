@@ -20,6 +20,7 @@ bool MoveFall::isReady()
 			case 11:
 			case 12:
 			case 13:
+			case 14:
 			case 41:
 			case 42:
 			case 43:

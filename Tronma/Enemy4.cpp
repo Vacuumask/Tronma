@@ -2,18 +2,7 @@
 
 Bullet4::Bullet4()
 {
-	width = 1024;
-	height = 20;
-
-	c_x = 0;
-	c_y = 0;
-	c_width = 1024;
-	c_height = 20;
-
-	canBeDamaged = false;
-
-	loadPicture();
-	animationEnemy = new AnimationEnemy(&x, &y, pictures);
+	
 }
 
 Bullet4::~Bullet4()
@@ -26,6 +15,21 @@ Bullet4::~Bullet4()
 		delete animationEnemy;
 		animationEnemy = NULL;
 	}
+}
+
+void Bullet4::init() {
+	width = 1024;
+	height = 20;
+
+	c_x = 0;
+	c_y = 0;
+	c_width = 1024;
+	c_height = 20;
+
+	canBeDamaged = false;
+
+	loadPicture();
+	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
 }
 
 void Bullet4::loadPicture()
@@ -48,7 +52,7 @@ void Bullet4::run(float* dt)
 			}
 		}
 
-		if (shootTime <= 0) {
+		if (shootTime <= 0 || Enemy::EMP == true) {
 			isOver();
 		}
 
@@ -89,7 +93,7 @@ bool Bullet4::attackedCollide()
 						}
 					}
 					break;
-				case 1:
+				default:
 					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
 						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
 						return true;
@@ -118,16 +122,7 @@ void Bullet4::isOver()
 
 Enemy4::Enemy4()
 {
-	width = 144;
-	height = 144;
-
-	c_x = 0;
-	c_y = 0;
-	c_width = 144;
-	c_height = 144;
-
-	loadPicture();
-	animationEnemy = new AnimationEnemy(&x, &y, pictures);
+	
 }
 
 Enemy4::~Enemy4()
@@ -139,6 +134,23 @@ Enemy4::~Enemy4()
 	if (animationEnemy != NULL) {
 		delete animationEnemy;
 		animationEnemy = NULL;
+	}
+}
+
+void Enemy4::init() {
+	width = 144;
+	height = 144;
+
+	c_x = 0;
+	c_y = 0;
+	c_width = 144;
+	c_height = 144;
+
+	loadPicture();
+	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+	for (int i = 0; i < bullet_Size; i++) {
+		bullet4[i].init();
 	}
 }
 
@@ -231,17 +243,21 @@ void Enemy4::run(float* dt)
 			}
 			else if (isCharging == true) {
 				animationEnemy->run(42);
-				chargeTime -= *dt;
+				chargeTime -= *dt * *xspeed / 300;
+
 				if (chargeTime <= 0) {
 					isCharging = false;
 					isShooting = true;
 					//chargeTime = 2;
-					acquire(0);
+
+					if (Enemy::EMP == false) {
+						acquire(0);
+					}
 				}
 			}
 			else if (isShooting == true) {
 				animationEnemy->run(43);
-				shootTime -= *dt;
+				shootTime -= *dt * *xspeed / 300;
 				if (shootTime <= 0) {
 					isShooting = false;
 					isWaiting = true;
@@ -250,7 +266,7 @@ void Enemy4::run(float* dt)
 			}
 			else if (isWaiting == true) {
 				animationEnemy->run(44);
-				waitTime -= *dt;
+				waitTime -= *dt * *xspeed / 300;
 				if (waitTime <= 0) {
 					isWaiting = false;
 					isBacking = true;
@@ -266,7 +282,7 @@ void Enemy4::run(float* dt)
 			}
 		}
 		else {
-			dieTime -= *dt;
+			dieTime -= *dt * *xspeed / 300;
 			animationEnemy->run(-4);
 			if (dieTime <= 0) {
 				isOver();
@@ -305,7 +321,7 @@ bool Enemy4::attackedCollide()
 						}
 					}
 					break;
-				case 1:
+				default:
 					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
 						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
 						return true;
@@ -327,6 +343,8 @@ void Enemy4::beDamaged()
 	isShooting = false;
 	isWaiting = false;
 	isBacking = false;
+	Player::kill_score += 150;
+	Player::kill[3]++;
 }
 
 void Enemy4::isOver()
@@ -345,6 +363,13 @@ void Enemy4::isOver()
 	isShooting = false;
 	isWaiting = false;
 	isBacking = false;
+}
+
+void Enemy4::bulletOver()
+{
+	for (int i = 0; i < bullet_Size; i++) {
+		bullet4[i].isOver();
+	}
 }
 
 void Enemy4::acquire(int bullet)
@@ -369,6 +394,8 @@ Enemy4Pool::Enemy4Pool(int& sceneWidth, float* speed, Player* player, int* sec_e
 		enemy4[i].player = player;
 		enemy4[i].start_x = sceneWidth;
 		enemy4[i].xspeed = speed;
+		enemy4[i].sec_enum = sec_enum;
+		enemy4[i].init();
 	}
 }
 
@@ -413,5 +440,14 @@ void Enemy4Pool::run(float* dt)
 {
 	for (int i = 0; i < pool_Size; i++) {
 		enemy4[i].run(dt);
+	}
+}
+
+void Enemy4Pool::isOver()
+{
+	for (int i = 0; i < pool_Size; i++) {
+		enemy4[i].isOver();
+		enemy4[i].animationEnemy->reset();
+		enemy4[i].bulletOver();
 	}
 }

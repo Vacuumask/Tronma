@@ -3,7 +3,7 @@
 
 class MoveJump :public Move {
 public:
-	MoveJump(Player* player, float* dt, float* NItime);
+	MoveJump(Player* player, float* speed, float* dt, float* NItime);
 	bool isReady()override;
 	void effect()override;
 	void isOver()override;

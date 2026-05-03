@@ -2,17 +2,6 @@
 
 Bullet2::Bullet2()
 {
-	y = 420;
-	width = 24;
-	height = 10;
-
-	c_x = 0;
-	c_y = 0;
-	c_width = 24;
-	c_height = 10;
-
-	loadPicture();
-	animationEnemy = new AnimationEnemy(&x, &y, pictures);
 }
 
 Bullet2::~Bullet2()
@@ -25,6 +14,20 @@ Bullet2::~Bullet2()
 		delete animationEnemy;
 		animationEnemy = NULL;
 	}
+}
+
+void Bullet2::init(){
+	y = 420;
+	width = 24;
+	height = 10;
+
+	c_x = 0;
+	c_y = 0;
+	c_width = 24;
+	c_height = 10;
+
+	loadPicture();
+	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
 }
 
 void Bullet2::loadPicture()
@@ -40,7 +43,7 @@ void Bullet2::loadPicture()
 void Bullet2::run(float* dt)
 {
 	if (active == true) {
-		x -= *xspeed * 2.5 * *dt;
+		x -= *xspeed * 2.5 * *dt * Animation::p_speed;
 		if (alive == true) {
 			if (type == 1) {
 				animationEnemy->run(251);
@@ -53,9 +56,14 @@ void Bullet2::run(float* dt)
 				damage();
 				isOver();
 			}
+
+			if (collideS()) {
+				damageS();
+				isOver();
+			}
 		}
 
-		if (x <= -width) {
+		if (x <= -width || Enemy::EMP == true) {
 			isOver();
 		}
 
@@ -67,9 +75,18 @@ void Bullet2::run(float* dt)
 
 bool Bullet2::collide()
 {
-	if (active == true && canDamage == true && alive == true) {
+	if (active == true && canDamage == true && alive == true && player->canBeDamaged == true) {
 		return !(x + c_x > player->x + player->c_x + player->c_width || x + c_x + c_width<player->x + player->c_x ||
 			y + c_y>player->y + player->c_y + player->c_height || y + c_y + c_height < player->y + player->c_y);
+	}
+	return false;
+}
+
+bool Bullet2::collideS()
+{
+	if (active == true && alive == true) {
+		return !(x + c_x > shadow->x + shadow->c_x + shadow->c_width || x + c_x + c_width<shadow->x + shadow->c_x ||
+			y + c_y>shadow->y + shadow->c_y + shadow->c_height || y + c_y + c_height < shadow->y + shadow->c_y);
 	}
 	return false;
 }
@@ -80,6 +97,11 @@ void Bullet2::damage()
 	if (player->canBeDamaged == true) {
 		player->health--;
 	}
+}
+
+void Bullet2::damageS()
+{
+	shadow->health = 0;
 }
 
 bool Bullet2::attackedCollide()
@@ -96,7 +118,7 @@ bool Bullet2::attackedCollide()
 						}
 					}
 					break;
-				case 1:
+				default:
 					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
 						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
 						return true;
@@ -124,17 +146,6 @@ void Bullet2::isOver()
 
 Enemy2::Enemy2()
 {
-	y = 396;
-	width = 351;
-	height = 78;
-
-	c_x = 264;
-	c_y = 12;
-	c_width = 11;
-	c_height = 21;
-
-	loadPicture();
-	animationEnemy = new AnimationEnemy(&x, &y, pictures);
 }
 
 Enemy2::~Enemy2()
@@ -147,6 +158,24 @@ Enemy2::~Enemy2()
         delete animationEnemy;
         animationEnemy = NULL;
     }
+}
+
+void Enemy2::init() {
+	y = 396;
+	width = 351;
+	height = 78;
+
+	c_x = 264;
+	c_y = 12;
+	c_width = 11;
+	c_height = 21;
+
+	loadPicture();
+	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+	for (int i = 0; i < bullet_Size; i++) {
+		bullet2[i].init();
+	}
 }
 
 void Enemy2::loadPicture()
@@ -239,31 +268,33 @@ void Enemy2::run(float* dt)
 	if (active == true) {
 		if (alive == true) {
 			if (isCharging == false && isShooting == false && isDashing == false) {
-				x -= *xspeed * 2 * *dt;
+				x -= *xspeed * 2 * *dt * Animation::p_speed;
 				animationEnemy->run(21);
 			}
 			else if (isCharging == true) {
-				x -= *xspeed * 1.5 * *dt;
+				x -= *xspeed * 1.5 * *dt * Animation::p_speed;
 				animationEnemy->run(22);
-				chargeTime -= *dt;
+				chargeTime -= *dt * *xspeed / 300;
 				if (chargeTime <= 0) {
 					isCharging = false;
 					isShooting = true;
 					chargeTime = 0.5;
-					if (shootNum < 2) {
-						acquire(1);
-						shootNum++;
-					}
-					else {
-						acquire(2);
-						shootNum = 0;
+					if (Enemy::EMP == false) {
+						if (shootNum < 2) {
+							acquire(1);
+							shootNum++;
+						}
+						else {
+							acquire(2);
+							shootNum = 0;
+						}
 					}
 				}
 			}
 			else if (isShooting == true) {
-				x -= *xspeed * 1.5 * *dt;
+				x -= *xspeed * 1.5 * *dt * Animation::p_speed;
 				animationEnemy->run(23);
-				shootTime -= *dt;
+				shootTime -= *dt * *xspeed / 300;
 				if (shootTime <= 0) {
 					isShooting = false;
 					dashIsReady = true;
@@ -273,11 +304,12 @@ void Enemy2::run(float* dt)
 			else if (isDashing == true) {
 				if (dashIsReady == true) {
 					x += 1.8 * width;
+					if (x > 1200 - width)x = 1200 - width;
 					dashIsReady = false;
 				}
-				x -= *xspeed * 1.3 * *dt;
+				x -= *xspeed * 1.3 * *dt * Animation::p_speed;
 				animationEnemy->run(24);
-				dashTime -= *dt;
+				dashTime -= *dt * *xspeed / 300;
 				if (dashTime <= 0) {
 					isDashing = false;
 					dashTime = 0.5;
@@ -287,9 +319,13 @@ void Enemy2::run(float* dt)
 			if (collide()) {
 				damage();
 			}
+
+			if (collideS()) {
+				damageS();
+			}
 		}
 		else {
-			x -= *xspeed * 2 * *dt;
+			x -= *xspeed * 2 * *dt * Animation::p_speed;
 			animationEnemy->run(-2);
 		}
 		
@@ -327,9 +363,18 @@ bool Enemy2::collide()
 	return false;
 }
 
+bool Enemy2::collideS()
+{
+	if (active == true && alive == true) {
+		return !(x + c_x > shadow->x + shadow->c_x + shadow->c_width || x + c_x + c_width<shadow->x + shadow->c_x ||
+			y + c_y>shadow->y + shadow->c_y + shadow->c_height || y + c_y + c_height < shadow->y + shadow->c_y);
+	}
+	return false;
+}
+
 bool Enemy2::shootDisCollide()
 {
-	if (active == true && canDamage == true && alive == true) {
+	if (active == true && canDamage == true && alive == true && Enemy::start == false) {
 		return !(x + c_x - shootDis > player->x + player->c_x + player->c_width || x + c_x + c_width<player->x + player->c_x ||
 			y + c_y>player->y + player->c_y + player->c_height || y + c_y + c_height < player->y + player->c_y);
 	}
@@ -342,6 +387,11 @@ void Enemy2::damage()
 	if (player->canBeDamaged == true) {
 		player->health--;
 	}
+}
+
+void Enemy2::damageS()
+{
+	shadow->health = 0;
 }
 
 bool Enemy2::attackedCollide()
@@ -359,7 +409,7 @@ bool Enemy2::attackedCollide()
 						}
 					}
 					break;
-				case 1:
+				default:
 					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
 						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
 						return true;
@@ -380,6 +430,10 @@ void Enemy2::beDamaged()
 	isShooting = false;
 	isDashing = false;
 	dashIsReady = false;
+	if (Enemy::start == false) {
+		Player::kill_score += 150;
+		Player::kill[1]++;
+	}
 }
 
 void Enemy2::isOver()
@@ -393,7 +447,17 @@ void Enemy2::isOver()
 	isShooting = false;
 	isDashing = false;
 	dashIsReady = false;
+	chargeTime = 0.5;
+	shootTime = 0.3;
+	dashTime = 0.5;
 	shootNum = 0;
+}
+
+void Enemy2::bulletOver()
+{
+	for (int i = 0; i < bullet_Size; i++) {
+		bullet2[i].isOver();
+	}
 }
 
 void Enemy2::acquire(int bullet)
@@ -408,6 +472,7 @@ void Enemy2::acquire(int bullet)
 				bullet2[i].type = 1;
 
 				bullet2[i].player = player;
+				bullet2[i].shadow = shadow;
 				bullet2[i].xspeed = xspeed;
 				//std::cout << sec_enum[sec];
 				break;
@@ -423,18 +488,22 @@ void Enemy2::acquire(int bullet)
 		bullet2[bullet_Size - 1].type = 2;
 
 		bullet2[bullet_Size - 1].player = player;
+		bullet2[bullet_Size - 1].shadow = shadow;
 		bullet2[bullet_Size - 1].xspeed = xspeed;
 	}
 }
 
-Enemy2Pool::Enemy2Pool(int& sceneWidth, float* speed, Player* player, int* sec_enum)
+Enemy2Pool::Enemy2Pool(int& sceneWidth, float* speed, Player* player, Player* shadow, int* sec_enum)
 {
 	this->player = player;
 	this->sec_enum = sec_enum;
 	for (int i = 0; i < pool_Size; i++) {
 		enemy2[i].player = player;
+		enemy2[i].shadow = shadow;
 		enemy2[i].start_x = sceneWidth - 200;
 		enemy2[i].xspeed = speed;
+		enemy2[i].sec_enum = sec_enum;
+		enemy2[i].init();
 	}
 }
 
@@ -450,7 +519,12 @@ void Enemy2Pool::acquire(int sec)
 {
 	for (int i = 0; i < pool_Size; i++) {
 		if (enemy2[i].active == false) {
-			enemy2[i].x = enemy2[i].start_x;
+			if (Enemy::start == true) {
+				enemy2[i].x = 900;
+			}
+			else {
+				enemy2[i].x = enemy2[i].start_x;
+			}
 			enemy2[i].active = true;
 			enemy2[i].canDamage = true;
 			enemy2[i].alive = true;
@@ -467,6 +541,15 @@ void Enemy2Pool::run(float* dt)
 {
 	for (int i = 0; i < pool_Size; i++) {
 		enemy2[i].run(dt);
+	}
+}
+
+void Enemy2Pool::isOver()
+{
+	for (int i = 0; i < pool_Size; i++) {
+		enemy2[i].isOver();
+		enemy2[i].animationEnemy->reset();
+		enemy2[i].bulletOver();
 	}
 }
 

@@ -1,8 +1,11 @@
 D:\VMK\UNI\C++\Tronma\Tronma\Animation.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\Animation.obj
 D:\VMK\UNI\C++\Tronma\Tronma\AnimationBackgroundMain.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\AnimationBackgroundMain.obj
+D:\VMK\UNI\C++\Tronma\Tronma\AnimationBackgroundMenu.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\AnimationBackgroundMenu.obj
 D:\VMK\UNI\C++\Tronma\Tronma\AnimationEffect.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\AnimationEffect.obj
 D:\VMK\UNI\C++\Tronma\Tronma\AnimationEnemy.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\AnimationEnemy.obj
 D:\VMK\UNI\C++\Tronma\Tronma\AnimationPlayer.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\AnimationPlayer.obj
+D:\VMK\UNI\C++\Tronma\Tronma\Audio.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\Audio.obj
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\Enemy.obj
 D:\VMK\UNI\C++\Tronma\Tronma\Enemy1.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\Enemy1.obj
 D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\Enemy2.obj
 D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\Enemy3.obj
@@ -13,8 +16,14 @@ D:\VMK\UNI\C++\Tronma\Tronma\MoveFall.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug
 D:\VMK\UNI\C++\Tronma\Tronma\MoveSprint.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\MoveSprint.obj
 D:\VMK\UNI\C++\Tronma\Tronma\Op.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\Op.obj
 D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\Player.obj
+D:\VMK\UNI\C++\Tronma\Tronma\Scene.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\Scene.obj
 D:\VMK\UNI\C++\Tronma\Tronma\SceneMain.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\SceneMain.obj
 D:\VMK\UNI\C++\Tronma\Tronma\SceneMenu.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\SceneMenu.obj
 D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\SkillChop.obj
 D:\VMK\UNI\C++\Tronma\Tronma\MoveJump.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\MoveJump.obj
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\SkillEMP.obj
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\SkillMoon.obj
+D:\VMK\UNI\C++\Tronma\Tronma\SkillShadow.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\SkillShadow.obj
+D:\VMK\UNI\C++\Tronma\Tronma\SkillSlow.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\SkillSlow.obj
+D:\VMK\UNI\C++\Tronma\Tronma\SkillTeleport.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\SkillTeleport.obj
 D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp;D:\VMK\UNI\C++\Tronma\Tronma\x64\Debug\UI.obj

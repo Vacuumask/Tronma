@@ -71,6 +71,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>D:\VMK\UNI\C++\bass24\c;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\VMK\UNI\C++\bass24\c\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>D:\VMK\UNI\C++\bass24\c;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\VMK\UNI\C++\bass24\c\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -107,6 +115,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>bass.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -121,14 +130,18 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>bass.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationBackgroundMain.cpp" />
+    <ClCompile Include="AnimationBackgroundMenu.cpp" />
     <ClCompile Include="AnimationEffect.cpp" />
     <ClCompile Include="AnimationEnemy.cpp" />
     <ClCompile Include="AnimationPlayer.cpp" />
+    <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Enemy1.cpp" />
     <ClCompile Include="Enemy2.cpp" />
     <ClCompile Include="Enemy3.cpp" />
@@ -139,19 +152,27 @@
     <ClCompile Include="MoveSprint.cpp" />
     <ClCompile Include="Op.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="SceneMenu.cpp" />
     <ClCompile Include="SkillChop.cpp" />
     <ClCompile Include="MoveJump.cpp" />
+    <ClCompile Include="SkillEMP.cpp" />
+    <ClCompile Include="SkillMoon.cpp" />
+    <ClCompile Include="SkillShadow.cpp" />
+    <ClCompile Include="SkillSlow.cpp" />
+    <ClCompile Include="SkillTeleport.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationBackground.h" />
+    <ClInclude Include="AnimationBackgroundMenu.h" />
     <ClInclude Include="AnimationEffect.h" />
     <ClInclude Include="AnimationEnemy.h" />
     <ClInclude Include="AnimationPlayer.h" />
     <ClInclude Include="Attack.h" />
+    <ClInclude Include="Audio.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Enemy1.h" />
@@ -171,6 +192,11 @@
     <ClInclude Include="SceneMenu.h" />
     <ClInclude Include="SkillChop.h" />
     <ClInclude Include="MoveJump.h" />
+    <ClInclude Include="SkillEMP.h" />
+    <ClInclude Include="SkillMoon.h" />
+    <ClInclude Include="SkillShadow.h" />
+    <ClInclude Include="SkillSlow.h" />
+    <ClInclude Include="SkillTeleport.h" />
     <ClInclude Include="tools.hpp" />
     <ClInclude Include="UI.h" />
   </ItemGroup>

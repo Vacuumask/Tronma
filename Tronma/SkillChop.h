@@ -4,11 +4,12 @@
 class SkillChop :public Skill {
 public:
 	SkillChop(Player* player, float* dt, float* NItime);
-	void loadPicture()override;
+	void loadPicture();
 	bool isReady()override;
 	void effect()override;
 	void isOver()override;
 	void run()override;
+	void reset()override;
 	void initAttack();
 	void lightBladeRun();
 

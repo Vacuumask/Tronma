@@ -7,9 +7,10 @@ public:
 	virtual void effect() = 0;
 	virtual void isOver() = 0;
 	virtual void run() = 0;
-protected:
+
 	int needEnergy = 0;
 	float windUp = 0;
+protected:
 	float windDown = 0;
 	float time = 0;
 	bool notUsing = true;

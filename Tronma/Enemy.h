@@ -26,8 +26,12 @@ struct Enemy :public Character
 	bool canBeDamaged = true;
 	bool alive = false;
 
+	static bool start;
+	static bool EMP;
+
 	std::vector<IMAGE> pictures;
 	Player* player = NULL;
+	Player* shadow = NULL;
 	AnimationEnemy* animationEnemy = NULL;
 };
 
@@ -36,6 +40,8 @@ public:
 	virtual ~EnemyPool() = default;
 	virtual void acquire(int sec) = 0;
 	virtual void run(float* dt) = 0;
+	virtual void isOver() = 0;
 	Player* player = NULL;
+	Player* shadow = NULL;
 	int* sec_enum;
 };

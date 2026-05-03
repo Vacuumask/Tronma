@@ -5,14 +5,16 @@
 class Skill
 {
 public:
-	virtual void loadPicture() = 0;
+	//virtual void loadPicture() = 0;
 	virtual bool isReady() = 0;
 	virtual void effect() = 0;
 	virtual void isOver() = 0;
 	virtual void run() = 0;
-protected:
+	virtual void reset() = 0;
+
 	int needEnergy = 0;
 	float cd = 0;
+protected:
 	float windUp = 0;
 	float windDown = 0;
 	float time = 0;
@@ -26,8 +28,8 @@ protected:
 	float* p_x;
 	float* p_y;
 	float* y_speed;
-	int* p_width;
-	int* p_height;
+	float* p_width;
+	float* p_height;
 	int* p_health;
 	int* p_energy;
 	float commonX = 100;

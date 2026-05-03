@@ -5,6 +5,7 @@ class Bullet3 :public Enemy {
 public:
 	Bullet3();
 	~Bullet3();
+	void init();
 	void loadPicture()override;
 	void run(float* dt)override;
 	bool collide()override;
@@ -19,6 +20,7 @@ class Enemy3 :public Enemy {
 public:
 	Enemy3();
 	~Enemy3();
+	void init();
 	void loadPicture()override;
 	void run(float* dt)override;
 	bool collide()override;
@@ -28,6 +30,7 @@ public:
 	void isOver()override;
 
 	void acquire(int bullet);
+	void bulletOver();
 
 	bool isCharging = false;
 
@@ -49,6 +52,7 @@ public:
 	~Enemy3Pool();
 	void acquire(int sec)override;
 	void run(float* dt)override;
+	void isOver()override;
 protected:
 	static const int pool_Size = 4;
 	Enemy3 enemy3[pool_Size];

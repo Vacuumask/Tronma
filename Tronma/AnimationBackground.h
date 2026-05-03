@@ -10,7 +10,6 @@ public:
 protected:
 	float* a_x;
 	float* a_y;
-	float* a_speed;
 	std::vector<IMAGE> a_pictures;
 	std::vector<float> a_X;
 	float g_x = 0;

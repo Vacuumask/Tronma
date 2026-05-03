@@ -4,14 +4,15 @@
 
 class AnimationEnemy :public Animation {
 public:
-	AnimationEnemy(float* x, float* y, std::vector<IMAGE>& pictures);
+	AnimationEnemy(float* x, float* y, float* speed, std::vector<IMAGE>& pictures);
 	~AnimationEnemy();
 	void run(int e_num);
 	void reset(int e_num);
+	void reset();
 protected:
 	float* a_x, * a_y;
 	std::vector<IMAGE> a_pictures;
-	int temp_op;
+	int temp_op = 0;
 
 	int a_num1 = 0;
 	float a_switch1 = 0;

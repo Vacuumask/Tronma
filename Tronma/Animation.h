@@ -11,7 +11,10 @@ public:
 	void FPS();
 	virtual ~Animation();
 	float dt = 0;
+	static float p_speed;
+
 protected:
+	float* a_speed;
 	Animation* animation = NULL;
 private:
 	LARGE_INTEGER freq, last, current = { 0 };

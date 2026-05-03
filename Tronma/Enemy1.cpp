@@ -2,17 +2,6 @@
 
 Enemy1::Enemy1()
 {
-    y = 207;
-    width = 650;
-    height = 400;
-
-    c_x = 455;
-    c_y = 182;
-    c_width = 72;
-    c_height = 81;
-
-    loadPicture();
-    animationEnemy = new AnimationEnemy(&x, &y, pictures);
 }
 
 Enemy1::~Enemy1()
@@ -25,6 +14,20 @@ Enemy1::~Enemy1()
         delete animationEnemy;
         animationEnemy = NULL;
     }
+}
+
+void Enemy1::init() {
+    y = 207;
+    width = 650;
+    height = 400;
+
+    c_x = 455;
+    c_y = 182;
+    c_width = 72;
+    c_height = 81;
+
+    loadPicture();
+    animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
 }
 
 void Enemy1::loadPicture()
@@ -76,11 +79,14 @@ void Enemy1::loadPicture()
 void Enemy1::run(float *dt)
 {
     if (active == true) {
-        x -= *xspeed * 2 * *dt;
+        x -= *xspeed * 2 * *dt * Animation::p_speed;
         if (alive == true) {
             animationEnemy->run(1);
             if (collide()) {
                 damage();
+            }
+            if (collideS()) {
+                damageS();
             }
         }
         else {
@@ -106,12 +112,26 @@ bool Enemy1::collide()
     return false;
 }
 
+bool Enemy1::collideS()
+{
+    if (active == true && alive == true) {
+        return !(x + c_x > shadow->x + shadow->c_x + shadow->c_width || x + c_x + c_width<shadow->x + shadow->c_x ||
+            y + c_y>shadow->y + shadow->c_y + shadow->c_height || y + c_y + c_height < shadow->y + shadow->c_y);
+    }
+    return false;
+}
+
 void Enemy1::damage()
 {
     canDamage = false;
     if (player->canBeDamaged == true) {
         player->health--;
     }
+}
+
+void Enemy1::damageS()
+{
+    shadow->health = 0;
 }
 
 bool Enemy1::attackedCollide()
@@ -129,7 +149,7 @@ bool Enemy1::attackedCollide()
                         }
                     }
                     break;
-                case 1:
+                default:
                     if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
                         y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
                         return true;
@@ -146,6 +166,10 @@ void Enemy1::beDamaged()
 {
     canDamage = false;
     alive = false;
+    if (Enemy::start == false) {
+        Player::kill_score += 50;
+        Player::kill[0]++;
+    }
 }
 
 void Enemy1::isOver()
@@ -157,14 +181,17 @@ void Enemy1::isOver()
     alive = false;
 }
 
-Enemy1Pool::Enemy1Pool(int& sceneWidth, float* speed, Player* player, int* sec_enum)
+Enemy1Pool::Enemy1Pool(int& sceneWidth, float* speed, Player* player, Player* shadow, int* sec_enum)
 {
     this->player = player;
     this->sec_enum = sec_enum;
     for (int i = 0; i < pool_Size; i++) {
         enemy1[i].player = player;
+        enemy1[i].shadow = shadow;
         enemy1[i].start_x = sceneWidth - 300;
         enemy1[i].xspeed = speed;
+        enemy1[i].sec_enum = sec_enum;
+        enemy1[i].init();
     }
 }
 
@@ -180,7 +207,12 @@ void Enemy1Pool::acquire(int sec)
 {
     for (int i = 0; i < pool_Size; i++) {
         if (enemy1[i].active == false) {
-            enemy1[i].x = enemy1[i].start_x;
+            if (Enemy::start == true) {
+                enemy1[i].x = 500;
+            }
+            else {
+                enemy1[i].x = enemy1[i].start_x;
+            }
             enemy1[i].active = true;
             enemy1[i].canDamage = true;
             enemy1[i].alive = true;
@@ -195,5 +227,13 @@ void Enemy1Pool::acquire(int sec)
 void Enemy1Pool::run(float* dt) {
     for (int i = 0; i < pool_Size; i++) {
         enemy1[i].run(dt);
+    }
+}
+
+void Enemy1Pool::isOver()
+{
+    for (int i = 0; i < pool_Size; i++) {
+        enemy1[i].isOver();
+        enemy1[i].animationEnemy->reset();
     }
 }

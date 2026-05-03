@@ -5,6 +5,7 @@ class Bullet4 :public Enemy {
 public:
 	Bullet4();
 	~Bullet4();
+	void init();
 	void loadPicture()override;
 	void run(float* dt)override;
 	bool collide()override;
@@ -21,6 +22,7 @@ class Enemy4 :public Enemy {
 public:
 	Enemy4();
 	~Enemy4();
+	void init();
 	void loadPicture()override;
 	void run(float* dt)override;
 	bool collide()override;
@@ -30,13 +32,14 @@ public:
 	void isOver()override;
 
 	void acquire(int bullet);
+	void bulletOver();
 
 	bool isCharging = false;
 	bool isShooting = false;
 	bool isWaiting = false;
 	bool isBacking = false;
 
-	float chargeTime = 2;
+	float chargeTime = 2.6;
 	float shootTime = 0.6;
 	float waitTime = 1;
 	float dieTime = 2;
@@ -44,6 +47,7 @@ public:
 	float y0 = 0;
 	float y1 = 110;
 	float y2 = 220;
+
 protected:
 	static const int bullet_Size = 1;
 	Bullet4 bullet4[bullet_Size];
@@ -55,6 +59,7 @@ public:
 	~Enemy4Pool();
 	void acquire(int sec)override;
 	void run(float* dt)override;
+	void isOver()override;
 protected:
 	static const int pool_Size = 1;
 	Enemy4 enemy4[pool_Size];

@@ -1,10 +1,11 @@
 #include "AnimationEnemy.h"
 #include "AnimationEffect.h"
 
-AnimationEnemy::AnimationEnemy(float* x, float* y, std::vector<IMAGE>& pictures)
+AnimationEnemy::AnimationEnemy(float* x, float* y, float* speed, std::vector<IMAGE>& pictures)
 {
     a_x = x;
     a_y = y;
+    a_speed = speed;
     a_pictures = pictures;
 }
 
@@ -24,7 +25,7 @@ void AnimationEnemy::run(int e_num) {
     switch (e_num) {
     case 1:
         drawImg(*a_x, *a_y, &a_pictures[a_num1]);
-        a_switch1 += dt;
+        a_switch1 += dt * *a_speed / 300;
         if (a_switch1 >= 0.15) {
             a_switch1 = 0;
             a_num1++;
@@ -33,7 +34,7 @@ void AnimationEnemy::run(int e_num) {
         break;
     case -1:
         drawImg(*a_x+435, *a_y+150, &a_pictures[a_num_1]);
-        a_switch_1 += dt;
+        a_switch_1 += dt * *a_speed / 300;
         if (a_switch_1 >= 0.02) {
             a_switch_1 = 0;
             a_num_1++;
@@ -43,7 +44,7 @@ void AnimationEnemy::run(int e_num) {
 
     case 21:
         drawImg(*a_x, *a_y, &a_pictures[a_num21]);
-        a_switch21 += dt;
+        a_switch21 += dt * *a_speed / 300;
         if (a_switch21 >= 0.12) {
             a_switch21 = 0;
             a_num21++;
@@ -52,7 +53,7 @@ void AnimationEnemy::run(int e_num) {
         break;
     case 22:
         drawImg(*a_x, *a_y, &a_pictures[a_num22]);
-        a_switch22 += dt;
+        a_switch22 += dt * *a_speed / 300;
         if (a_switch22 >= 0.12) {
             a_switch22 = 0;
             a_num22++;
@@ -61,7 +62,7 @@ void AnimationEnemy::run(int e_num) {
         break;
     case 23:
         drawImg(*a_x, *a_y, &a_pictures[a_num23]);
-        a_switch23 += dt;
+        a_switch23 += dt * *a_speed / 300;
         if (a_switch23 >= 0.12) {
             a_switch23 = 0;
             a_num23++;
@@ -70,7 +71,7 @@ void AnimationEnemy::run(int e_num) {
         break;
     case 24:
         drawImg(*a_x, *a_y, &a_pictures[a_num24]);
-        a_switch24 += dt;
+        a_switch24 += dt * *a_speed / 300;
         if (a_switch24 >= 0.1) {
             a_switch24 = 0;
             a_num24++;
@@ -85,7 +86,7 @@ void AnimationEnemy::run(int e_num) {
         break;
     case -2:
         drawImg(*a_x + 250, *a_y, &a_pictures[a_num_2]);
-        a_switch_2 += dt;
+        a_switch_2 += dt * *a_speed / 300;
         if (a_switch_2 >= 0.02) {
             a_switch_2 = 0;
             a_num_2++;
@@ -95,7 +96,7 @@ void AnimationEnemy::run(int e_num) {
 
     case 31:
         drawImg(*a_x, *a_y, &a_pictures[a_num31]);
-        a_switch31 += dt;
+        a_switch31 += dt * *a_speed / 300;
         if (a_switch31 >= 0.12) {
             a_switch31 = 0;
             a_num31++;
@@ -104,7 +105,7 @@ void AnimationEnemy::run(int e_num) {
         break;
     case 32:
         drawImg(*a_x, *a_y, &a_pictures[a_num32]);
-        a_switch32 += dt;
+        a_switch32 += dt * *a_speed / 300;
         if (a_switch32 >= 0.12) {
             a_switch32 = 0;
             a_num32++;
@@ -119,7 +120,7 @@ void AnimationEnemy::run(int e_num) {
         break;
     case -3:
         drawImg(*a_x + 270, *a_y - 5, &a_pictures[a_num_3]);
-        a_switch_3 += dt;
+        a_switch_3 += dt * *a_speed / 300;
         if (a_switch_3 >= 0.02) {
             a_switch_3 = 0;
             a_num_3++;
@@ -132,7 +133,7 @@ void AnimationEnemy::run(int e_num) {
         break;
     case 42:
         drawImg(*a_x, *a_y, &a_pictures[a_num42]);
-        a_switch42 += dt;
+        a_switch42 += dt * *a_speed / 300;
         if (a_switch42 >= 0.5) {
             a_switch42 = 0;
             a_num42++;
@@ -144,7 +145,7 @@ void AnimationEnemy::run(int e_num) {
         break;
     case 44:
         drawImg(*a_x, *a_y, &a_pictures[a_num44]);
-        a_switch44 += dt;
+        a_switch44 += dt * *a_speed / 300;
         if (a_switch44 >= 0.5) {
             a_switch44 = 0;
             a_num44++;
@@ -164,7 +165,7 @@ void AnimationEnemy::run(int e_num) {
         else {
             drawImg(*a_x + 20, *a_y + 35, &a_pictures[a_num_4]);
         }
-        a_switch_4 += dt;
+        a_switch_4 += dt * *a_speed / 300;
         if (a_switch_4 >= (a_num_4 < 20?0.06:0.04)) {
             a_switch_4 = 0;
             a_num_4++;
@@ -215,4 +216,34 @@ void AnimationEnemy::reset(int e_num)
             a_switch_4 = 0;
         }
     }
+}
+
+void AnimationEnemy::reset()
+{
+    a_num_1 = 6;
+    a_switch_1 = 0;
+
+    a_num23 = 12;
+    a_switch23 = 0;
+
+    a_num24 = 16;
+    a_switch24 = 0;
+
+    a_num_2 = 23;
+    a_switch_2 = 0;
+
+    a_num32 = 12;
+    a_switch32 = 0;
+
+    a_num_3 = 16;
+    a_switch_3 = 0;
+
+    a_num42 = 0;
+    a_switch44 = 0;
+
+    a_num44 = 4;
+    a_switch44 = 0;
+
+    a_num_4 = 8;
+    a_switch_4 = 0;
 }

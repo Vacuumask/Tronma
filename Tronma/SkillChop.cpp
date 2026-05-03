@@ -3,7 +3,6 @@
 SkillChop::SkillChop(Player* player, float* dt, float* NItime)
 {
 	needEnergy = 2;
-	cd = 1;
 
 	p_dt = dt;
 	p_op_num = &player->op_num;
@@ -114,6 +113,7 @@ bool SkillChop::isReady()
 		case 11:
 		case 12:
 		case 13:
+		case 14:
 			return true;
 			break;
 		}
@@ -154,13 +154,10 @@ void SkillChop::isOver()
 {
 	time = 0;
 	windDown = 0;
-	//*p_NItime = 0;
 	notUsing = true;
-	/*if (fallChop == true && *p_damage == true) {
-		superChop = true;
-	}*/
 	fallChop = false;
 	*p_damage = false;
+	attackChop.active = false;
 }
 
 void SkillChop::run()
@@ -203,19 +200,32 @@ void SkillChop::run()
 			windDown -= *p_dt;
 			switch (*p_op_num) {
 			case 11:
+			case 14:
 			case 2:
 			case 3:
+			case 61:
+			case 62:
+			case 8:
+			case 9:
+			case 10:
 				isOver();
 			}
 		}
 		else {
-			*p_op_num = (*p_y < commomY ? 11 : 0);
+			*p_op_num = (*p_y < commomY ? 13 : 0);
 			isOver();
 		}
 	}
 	if (superChop == true) {
 		p_animationEffect->run(43);
 	}
+}
+
+void SkillChop::reset()
+{
+	isOver();
+	fallChop = false;
+	superChop = false;
 }
 
 void SkillChop::initAttack()

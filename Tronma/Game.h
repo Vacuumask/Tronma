@@ -14,11 +14,16 @@ public:
 	void clean();
 	void changeScene(Scene* scene);
 	bool isWindowAlive();
+
 private:
 	bool isRunning = true;
 	Scene* currentScene = NULL;
+	SceneMenu* sceneMenu = NULL;
+	SceneMain* sceneMain = NULL;
 	const int widgetWidth = 1024;
 	const int widgetHeight = 600;
 	Animation* animation = NULL;
 	Player* player = NULL;
+
+
 };

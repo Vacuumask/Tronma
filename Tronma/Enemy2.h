@@ -5,10 +5,13 @@ class Bullet2 :public Enemy {
 public:
 	Bullet2();
 	~Bullet2();
+	void init();
 	void loadPicture()override;
 	void run(float* dt)override;
 	bool collide()override;
+	bool collideS();
 	void damage()override;
+	void damageS();
 	bool attackedCollide()override;
 	void beDamaged()override;
 	void isOver()override;
@@ -19,16 +22,20 @@ class Enemy2 :public Enemy {
 public:
 	Enemy2();
 	~Enemy2();
+	void init();
 	void loadPicture()override;
 	void run(float* dt)override;
 	bool collide()override;
+	bool collideS();
 	bool shootDisCollide();
 	void damage()override;
+	void damageS();
 	bool attackedCollide()override;
 	void beDamaged()override;
 	void isOver()override;
 
 	void acquire(int bullet);
+	void bulletOver();
 
 	bool isCharging = false;
 	bool isShooting = false;
@@ -47,10 +54,11 @@ protected:
 
 class Enemy2Pool :public EnemyPool {
 public:
-	Enemy2Pool(int& sceneWidth, float* speed, Player* player, int* sec_enum);
+	Enemy2Pool(int& sceneWidth, float* speed, Player* player, Player* shadow, int* sec_enum);
 	~Enemy2Pool();
 	void acquire(int sec)override;
 	void run(float* dt)override;
+	void isOver()override;
 protected:
 	static const int pool_Size = 1;
 	Enemy2 enemy2[pool_Size];
