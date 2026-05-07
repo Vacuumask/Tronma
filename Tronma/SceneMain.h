@@ -1,6 +1,7 @@
 #pragma once
 #include<random>
 #include<algorithm>
+#include<cmath>
 
 #include"Scene.h"
 #include"Player.h"
@@ -8,7 +9,6 @@
 #include"Enemy2.h"
 #include"Enemy3.h"
 #include"Enemy4.h"
-#include"AnimationBackgroundMain.h"
 #include"AnimationPlayer.h"
 #include"AnimationEnemy.h"
 #include"UI.h"
@@ -59,8 +59,11 @@ private:
 	int ground_Y = 470;
 	int ground_Height = 20;
 	int sec_enum[5] = { 0,0,0,0,0 };
+	float generate_cd[4] = { 0,0,0,0 };
 
 	float startTime = 12;
+
+	int sen = -1;
 
 	bool start_enemy = true;
 
@@ -74,6 +77,6 @@ private:
 
 	std::random_device rd;
 	std::mt19937 gen;
-	std::normal_distribution<float>yDist;
+	//std::normal_distribution<float>yDist;
 	std::uniform_real_distribution<float>eDist;
 };

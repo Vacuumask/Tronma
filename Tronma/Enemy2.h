@@ -10,9 +10,7 @@ public:
 	void run(float* dt)override;
 	bool collide()override;
 	bool collideS();
-	void damage()override;
 	void damageS();
-	bool attackedCollide()override;
 	void beDamaged()override;
 	void isOver()override;
 	int type = 0;
@@ -28,7 +26,6 @@ public:
 	bool collide()override;
 	bool collideS();
 	bool shootDisCollide();
-	void damage()override;
 	void damageS();
 	bool attackedCollide()override;
 	void beDamaged()override;
@@ -50,6 +47,8 @@ protected:
 	int shootNum = 0;
 	static const int bullet_Size = 4;
 	Bullet2 bullet2[bullet_Size];
+
+	FxPlayer shoot;
 };
 
 class Enemy2Pool :public EnemyPool {

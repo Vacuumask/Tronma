@@ -10,7 +10,6 @@ public:
 	void run(float* dt)override;
 	bool collide()override;
 	bool collideS();
-	void damage()override;
 	void damageS();
 	bool attackedCollide()override;
 	void beDamaged()override;

@@ -1,4 +1,4 @@
-#include"SkillShadow.h"
+#include"Skill.h"
 
 SkillShadow::SkillShadow(Player* player, Player* shadow, float* speed, float* dt, float* NItime)
 {
@@ -16,10 +16,13 @@ SkillShadow::SkillShadow(Player* player, Player* shadow, float* speed, float* dt
 	p_energy = &player->energy;
 	p_die = &player->die;
 	p_canBeDamaged = &player->canBeDamaged;
+	p_rec = &player->rec;
 
 	this->shadow = shadow;
 	shadow->health = 0;
 	this->p_speed = speed;
+	out.load("../audio/fx/shadow1.wav", 2);
+	dis.load("../audio/fx/shadow2.wav", 2);
 }
 
 void SkillShadow::loadPicture() {
@@ -50,6 +53,7 @@ bool SkillShadow::isReady()
 void SkillShadow::effect()
 {
 	notUsing = false;
+	out.play();
 	shadow->x = *p_x;
 	shadow->y = commomY;
 	shadow->health = 1;
@@ -61,6 +65,7 @@ void SkillShadow::effect()
 
 void SkillShadow::isOver()
 {
+	out.stopAll();
 	shadow->y = -150;
 	shadow->health = 0;
 	cd = 10;
@@ -92,7 +97,9 @@ void SkillShadow::run()
 				*p_die = false;
 				*p_canBeDamaged = true;
 				*p_op_num = 0;
+				*p_rec = true;
 			}
+			dis.play();
 			isOver();
 		}
 	}

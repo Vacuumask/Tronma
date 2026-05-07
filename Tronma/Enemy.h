@@ -10,8 +10,8 @@ struct Enemy :public Character
 	virtual void loadPicture() = 0;
 	virtual void run(float* dt) = 0;
 	virtual bool collide() = 0;
-	virtual void damage() = 0;
-	virtual bool attackedCollide() = 0;
+	virtual void damage();
+	virtual bool attackedCollide();
 	virtual void beDamaged() = 0;
 	virtual void isOver() = 0;
 
@@ -33,6 +33,9 @@ struct Enemy :public Character
 	Player* player = NULL;
 	Player* shadow = NULL;
 	AnimationEnemy* animationEnemy = NULL;
+
+	FxPlayer ex;
+	FxPlayer FxDamage;
 };
 
 class EnemyPool {

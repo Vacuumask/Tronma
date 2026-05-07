@@ -1,32 +1,663 @@
-﻿  Enemy2.cpp
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.h(46,20): warning C4305: “初始化”: 从“double”到“float”截断
+﻿  Enemy.cpp
+  Enemy1.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy1.cpp(169,9): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy1.cpp(183,40): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+  Enemy2.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.h(43,20): warning C4305: “初始化”: 从“double”到“float”截断
   (编译源文件“Enemy2.cpp”)
   
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(46,28): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(141,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(275,30): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(295,30): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(301,18): warning C4305: “=”: 从“double”到“float”截断
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(306,15): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(307,36): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(310,30): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(441,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(451,14): warning C4305: “=”: 从“double”到“float”截断
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(503,34): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(44,28): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(104,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(238,30): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(259,30): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(265,18): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(270,15): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(271,36): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(274,30): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(398,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(408,14): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.cpp(460,34): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
   Enemy3.cpp
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(37,19): warning C4305: “初始化”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(33,19): warning C4305: “初始化”: 从“double”到“float”截断
   (编译源文件“Enemy3.cpp”)
   
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(38,21): warning C4305: “初始化”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(34,21): warning C4305: “初始化”: 从“double”到“float”截断
   (编译源文件“Enemy3.cpp”)
   
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(46,28): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(122,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(240,18): warning C4305: “=”: 从“double”到“float”截断
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(248,20): warning C4305: “=”: 从“double”到“float”截断
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(348,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(403,23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(435,23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(44,28): warning C4244: “-=”: 从“double”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(85,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(203,18): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(211,20): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(277,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(332,23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.cpp(360,23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+  Enemy4.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(16,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Enemy4.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(38,21): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Enemy4.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(39,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Enemy4.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(41,18): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Enemy4.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.cpp(83,14): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.cpp(84,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.cpp(297,14): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.cpp(299,12): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.cpp(300,6): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.cpp(321,18): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.cpp(338,23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+  Game.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(31,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(52,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(186,22): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(187,23): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.h(43,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(33,19): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(34,21): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(16,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(38,21): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(39,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Game.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(41,18): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Game.cpp”)
+  
+  MoveFall.cpp
+  MoveJump.cpp
+  MoveSprint.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\MoveSprint.cpp(43,9): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\MoveSprint.cpp(44,13): warning C4305: “=”: 从“double”到“float”截断
+  Op.cpp
+  Player.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp(79,61): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp(81,61): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp(83,61): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp(85,61): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp(87,61): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp(89,61): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp(91,61): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp(93,61): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\Player.cpp(95,61): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  Scene.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(31,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Scene.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(52,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“Scene.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(186,22): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“Scene.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(187,23): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“Scene.cpp”)
+  
+  SceneMain.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(31,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(52,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(186,22): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(187,23): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.h(43,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(33,19): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(34,21): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(16,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(38,21): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(39,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(41,18): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMain.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\SceneMain.cpp(288,15): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  SceneMenu.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(31,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMenu.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(52,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“SceneMenu.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(186,22): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“SceneMenu.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(187,23): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“SceneMenu.cpp”)
+  
+  SkillChop.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(41,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(41,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(43,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(43,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(45,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(45,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(47,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(47,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(49,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(49,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(51,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(51,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(53,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(53,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(55,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(55,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(57,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(57,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(59,62): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(59,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(61,62): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(61,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(63,62): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(63,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(65,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(65,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(163,9): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\SkillChop.cpp(164,13): warning C4305: “=”: 从“double”到“float”截断
+  SkillEMP.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(44,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(44,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(46,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(46,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(48,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(48,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(50,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(50,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(52,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(52,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(54,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(54,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(56,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(56,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(58,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(58,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(60,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(60,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(62,67): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(62,58): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(64,69): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(64,59): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(66,69): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillEMP.cpp(66,59): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+  SkillMoon.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(37,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(37,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(39,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(39,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(41,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(41,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(43,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(43,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(45,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(45,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(47,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(47,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(49,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(49,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(51,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(51,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(53,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(53,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(55,62): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(55,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(57,60): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(57,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\SkillMoon.cpp(92,9): warning C4305: “=”: 从“double”到“float”截断
+  SkillShadow.cpp
+  SkillSlow.cpp
+  SkillTeleport.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\SkillTeleport.cpp(46,9): warning C4305: “=”: 从“double”到“float”截断
+  正在生成代码...
+  正在编译...
+  UI.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(31,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“UI.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(52,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“UI.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(186,22): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“UI.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(187,23): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“UI.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(23,146): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(23,100): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(27,139): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(27,93): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(31,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(33,90): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(33,54): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(35,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(37,92): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(37,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(48,53): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(48,20): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(49,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(49,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(51,17): warning C4305: “=”: 从“double”到“float”截断
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(55,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(55,11): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(57,53): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(57,20): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(61,39): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(64,40): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(66,20): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(66,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(67,42): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(67,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(68,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(68,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(69,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(69,20): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(93,72): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(93,59): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(106,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(106,11): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(107,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(107,11): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(108,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(108,11): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(134,57): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(134,44): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(145,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(145,38): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(169,57): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(169,44): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(171,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(171,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(175,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(175,42): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(177,65): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(177,56): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(185,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(185,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(186,18): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(186,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(193,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(193,18): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(197,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(197,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(200,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(200,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(203,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(203,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(209,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(209,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(217,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(217,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(219,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(219,18): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(224,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(224,20): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(228,45): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(228,23): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(231,45): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(231,23): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(234,45): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(234,23): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(237,45): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(237,23): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(242,47): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(242,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(250,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(250,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(252,31): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(252,20): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(274,58): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(274,45): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(276,58): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(276,45): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(278,71): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(278,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(280,71): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(280,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(282,71): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(282,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(284,71): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(284,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(286,71): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(286,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(288,71): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(288,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(297,54): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(297,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(300,54): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(300,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(303,35): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(303,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(306,67): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(306,53): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(312,61): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(312,20): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(313,66): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(313,52): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(326,69): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(326,56): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(332,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(332,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(344,64): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(344,51): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(346,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(346,42): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(348,54): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(348,42): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(350,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(350,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(352,49): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(352,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(354,49): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(354,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(356,49): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(356,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(358,49): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(358,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(372,80): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(372,37): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(373,27): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(373,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(377,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(378,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(382,37): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(384,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(387,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(388,25): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(388,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(390,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(392,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(392,11): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(394,54): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(394,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(397,25): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(397,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(398,21): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(410,62): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(410,49): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(412,62): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(412,51): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(414,61): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(414,48): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(416,62): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(416,49): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(418,63): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(418,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(420,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(420,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(422,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(422,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(424,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(424,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(426,50): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(426,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(428,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(428,43): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(437,49): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(437,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(438,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(438,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(439,28): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(439,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(440,28): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(440,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(441,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(441,10): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(442,42): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(442,37): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(446,42): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(446,37): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(449,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(449,28): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(451,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(452,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(453,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(454,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(454,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(455,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(455,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(458,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(458,40): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(459,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(459,28): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(461,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(462,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(463,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(464,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(464,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(465,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(465,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(468,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(468,40): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(469,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(469,28): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(471,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(472,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(473,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(474,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(474,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(475,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(475,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(478,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(478,40): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(479,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(479,28): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(481,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(482,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(483,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(484,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(484,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(485,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(485,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(488,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(488,40): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(489,41): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(489,28): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(491,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(492,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(493,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(494,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(494,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(495,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(495,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(496,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(496,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(497,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(497,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(498,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(498,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(499,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(499,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(502,55): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(502,40): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(504,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(505,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(506,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(507,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(507,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(508,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(508,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(509,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(509,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(512,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(513,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(514,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(515,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(515,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(516,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(516,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(517,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(517,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(518,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(518,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(519,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(519,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(522,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(523,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(524,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(525,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(525,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(526,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(526,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(527,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(527,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(528,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(528,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(529,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(529,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(532,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(533,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(534,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(535,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(535,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(536,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(536,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(537,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(537,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(538,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(538,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(541,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(542,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(543,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(544,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(544,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(545,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(545,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(546,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(546,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(547,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(547,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(548,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(548,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(549,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(549,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(550,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(550,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(553,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(554,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(555,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(556,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(556,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(557,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(557,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(558,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(558,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(559,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(559,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(562,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(563,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(564,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(565,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(565,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(566,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(566,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(567,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(567,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(570,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(571,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(572,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(573,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(573,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(574,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(574,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(575,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(575,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(576,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(576,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(577,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(577,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(580,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(581,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(582,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(583,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(583,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(584,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(584,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(585,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(585,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(586,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(586,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(589,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(590,19): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(591,17): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(592,22): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(592,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(593,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(593,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(594,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(594,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(595,29): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+D:\VMK\UNI\C++\Tronma\Tronma\UI.cpp(595,14): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+  main.cpp
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(31,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(52,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(186,22): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\UI.h(187,23): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy2.h(43,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(33,19): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy3.h(34,21): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(16,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(38,21): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(39,20): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“main.cpp”)
+  
+D:\VMK\UNI\C++\Tronma\Tronma\Enemy4.h(41,18): warning C4305: “初始化”: 从“double”到“float”截断
+  (编译源文件“main.cpp”)
+  
   正在生成代码...
   LINK : 没有找到 D:\VMK\UNI\C++\Tronma\x64\Debug\Tronma.exe 或上一个增量链接没有生成它；正在执行完全链接
   Tronma.vcxproj -> D:\VMK\UNI\C++\Tronma\x64\Debug\Tronma.exe

@@ -6,7 +6,10 @@
 #include<vector>
 #include<cstring>
 
+#pragma comment(lib,"winmm.lib")
+
 #include"Animation.h"
+#include"AnimationBackground.h"
 #include"Op.h"
 #include"UI.h"
 #include"Audio.h"
@@ -33,9 +36,9 @@ public:
 protected:
 	int sceneWidth = 1024;
 	int sceneHeight = 600;
-	Animation* animation = NULL;
 	Op* op = NULL;
 	std::vector<UI*> ui;
 
-	
+	static FxPlayer press;
+	static FxPlayer enterGame;
 };

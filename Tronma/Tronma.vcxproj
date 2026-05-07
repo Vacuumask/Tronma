@@ -135,8 +135,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="AnimationBackgroundMain.cpp" />
-    <ClCompile Include="AnimationBackgroundMenu.cpp" />
+    <ClCompile Include="AnimationBackground.cpp" />
     <ClCompile Include="AnimationEffect.cpp" />
     <ClCompile Include="AnimationEnemy.cpp" />
     <ClCompile Include="AnimationPlayer.cpp" />
@@ -167,7 +166,6 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationBackground.h" />
-    <ClInclude Include="AnimationBackgroundMenu.h" />
     <ClInclude Include="AnimationEffect.h" />
     <ClInclude Include="AnimationEnemy.h" />
     <ClInclude Include="AnimationPlayer.h" />
@@ -180,23 +178,13 @@
     <ClInclude Include="Enemy3.h" />
     <ClInclude Include="Enemy4.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="AnimationBackgroundMain.h" />
     <ClInclude Include="Move.h" />
-    <ClInclude Include="MoveFall.h" />
-    <ClInclude Include="MoveSprint.h" />
     <ClInclude Include="Op.h" />
     <ClInclude Include="Skill.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="SceneMenu.h" />
-    <ClInclude Include="SkillChop.h" />
-    <ClInclude Include="MoveJump.h" />
-    <ClInclude Include="SkillEMP.h" />
-    <ClInclude Include="SkillMoon.h" />
-    <ClInclude Include="SkillShadow.h" />
-    <ClInclude Include="SkillSlow.h" />
-    <ClInclude Include="SkillTeleport.h" />
     <ClInclude Include="tools.hpp" />
     <ClInclude Include="UI.h" />
   </ItemGroup>

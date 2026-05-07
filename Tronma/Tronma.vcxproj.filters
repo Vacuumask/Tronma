@@ -45,9 +45,6 @@
     <ClCompile Include="Op.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationBackgroundMain.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="MoveSprint.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -75,9 +72,6 @@
     <ClCompile Include="AnimationEffect.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="AnimationBackgroundMenu.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Audio.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -100,6 +94,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="SkillMoon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationBackground.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -125,19 +122,10 @@
     <ClInclude Include="AnimationBackground.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationBackgroundMain.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="AnimationPlayer.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SkillChop.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveJump.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Op.h">
@@ -147,12 +135,6 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Move.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveSprint.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveFall.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
@@ -185,25 +167,7 @@
     <ClInclude Include="AnimationEffect.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="AnimationBackgroundMenu.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Audio.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SkillTeleport.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SkillEMP.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SkillSlow.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SkillShadow.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SkillMoon.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

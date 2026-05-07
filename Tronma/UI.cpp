@@ -56,7 +56,7 @@ void PlayerCondition::run()
 	}
 	drawImg(profile_x - profileBorder_thick, profile_y - profileBorder_thick, &pictures[2]);
 	
-	health_height= 133.0f * (float)*health / 7.0f;
+	health_height = 133.0f * ((float)*health >= 0.0f ? (float)*health : 0.0f) / 7.0f;
 	IMAGE temp3 = pictures[3];
 	temp3.Resize(hs_width, health_height + 1);
 	stamina_height = 133.0f * (float)*energy / 100.0f;
@@ -258,6 +258,11 @@ SkillCondition::SkillCondition(Op* op)
 	loadPicture();
 }
 
+SkillCondition::SkillCondition()
+{
+	loadPicture();
+}
+
 SkillCondition::~SkillCondition()
 {
 
@@ -286,18 +291,26 @@ void SkillCondition::loadPicture()
 
 void SkillCondition::run()
 {
-	for (int i = 0; i < 5; i++) {
-		if (op->getCd(i + 1) > 0) {
-			drawImg(skill_x + i * (skill_width + skill_gap), skill_y, &pictures[1]);
+	if (op != NULL) {
+		for (int i = 0; i < 5; i++) {
+			if (op->getCd(i + 1) > 0) {
+				drawImg(skill_x + i * (skill_width + skill_gap), skill_y, &pictures[1]);
+			}
+			else {
+				drawImg(skill_x + i * (skill_width + skill_gap), skill_y, &pictures[0]);
+			}
+			if (i == 0 && op->getTele() == true) {
+				drawImg(skill_x + 10, skill_y + 10, &pictures[2]);
+			}
+			else {
+				drawImg(skill_x + i * (skill_width + skill_gap) + 10, skill_y + 10, &pictures[i + 3]);
+			}
 		}
-		else {
-			drawImg(skill_x + i * (skill_width + skill_gap), skill_y, &pictures[0]);
-		}
-		if (i == 0 && op->getTele() == true) {
-			drawImg(skill_x + 10, skill_y + 10, &pictures[2]);
-		}
-		else {
-			drawImg(skill_x + i * (skill_width + skill_gap) + 10, skill_y + 10, &pictures[i + 3]);
+	}
+	else {
+		for (int i = 0; i < 5; i++) {
+			drawImg(skill_x + i * (skill_width + skill_gap), skill_y - 40, &pictures[0]);
+			drawImg(skill_x + i * (skill_width + skill_gap) + 10, skill_y - 30, &pictures[(i == 0 ? 2 : i + 3)]);
 		}
 	}
 }
@@ -383,4 +396,204 @@ void EndTable::run()
 
 	drawImg(back_x, back_y + all_y, &pictures[2]);
 	outtextxy(650, 406 + all_y, "退出");
+}
+
+InsTable::InsTable(int* ins_num)
+{
+	this->ins_num = ins_num;
+	loadPicture();
+}
+
+void InsTable::loadPicture()
+{
+	IMAGE img1, img2, img3, img4, img5, img6, img7, img8, img9, img10;
+	loadimage(&img1, "../image/ui/background.png", table_width, table_height);
+	pictures.push_back(img1);
+	loadimage(&img2, "../image/ui/Main_Menu_Bk.png", ins_width, ins_height);
+	pictures.push_back(img2);
+	loadimage(&img3, "../image/ui/ArrowLeft.png", arrow_width, arrow_height);
+	pictures.push_back(img3);
+	loadimage(&img4, "../image/ui/ArrowRight.png", arrow_width, arrow_height);
+	pictures.push_back(img4);
+	loadimage(&img5, "../image/player/idle/01.png", player_size, player_size);
+	pictures.push_back(img5);
+	loadimage(&img6, "../image/ui/e1.png", e1_size, e1_size);
+	pictures.push_back(img6);
+	loadimage(&img7, "../image/ui/e2.png", e2_size, e2_size);
+	pictures.push_back(img7);
+	loadimage(&img8, "../image/ui/e3.png", e3_size, e3_size);
+	pictures.push_back(img8);
+	loadimage(&img9, "../image/ui/e4.png", e4_size, e4_size);
+	pictures.push_back(img9);
+	loadimage(&img10, "../image/ui/sl1.png", back_width, back_height);
+	pictures.push_back(img10);
+}
+
+void InsTable::run()
+{
+	settextcolor(WHITE);
+	setbkmode(TRANSPARENT);
+	drawImg(0, 0, &pictures[0]);
+	drawImg(player_x, (table_height - player_size) / 2, &pictures[4]);
+	drawImg(e_x, e_y * 1, &pictures[5]);
+	drawImg(e_x + 25, e_y * 2 + 25, &pictures[6]);
+	drawImg(e_x + 20, e_y * 3 + 20, &pictures[7]);
+	drawImg(e_x, e_y * 4, &pictures[8]);
+	drawImg((table_width - back_width) / 2, back_y, &pictures[9]);
+	settextstyle(36, 0, "微软雅黑");
+	outtextxy(484, 556, "返回");
+	if (*ins_num != 0) {
+		drawImg((table_width - ins_width) / 2, ins_y, &pictures[1]);
+		switch(*ins_num) {
+		case 11:
+			drawImg(table_width / 2 + arrow_dis, arrow_y, &pictures[3]);
+
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(380, title_y, "基础信息——Jason");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "血量：7   能量：100");
+			outtextxy(text_x, text_y + text_dis * 1, "能量回复速度：4/s");
+			break;
+		case 12:
+			drawImg(table_width / 2 - arrow_dis - arrow_width, arrow_y, &pictures[2]);
+			drawImg(table_width / 2 + arrow_dis, arrow_y, &pictures[3]);
+
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(480, title_y, "跳跃");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：W   冷却：0s   能量消耗：0");
+			outtextxy(text_x, text_y + text_dis * 1, "向上跳跃，空中使用可二段跳");
+			break;
+		case 13:
+			drawImg(table_width / 2 - arrow_dis - arrow_width, arrow_y, &pictures[2]);
+			drawImg(table_width / 2 + arrow_dis, arrow_y, &pictures[3]);
+
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(450, title_y, "快速落地");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：S   冷却：0s   能量消耗：0");
+			outtextxy(text_x, text_y + text_dis * 1, "快速降落至地面");
+			break;
+		case 14:
+			drawImg(table_width / 2 - arrow_dis - arrow_width, arrow_y, &pictures[2]);
+			drawImg(table_width / 2 + arrow_dis, arrow_y, &pictures[3]);
+
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(480, title_y, "冲刺");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：K   冷却：0.1s   能量消耗：2");
+			outtextxy(text_x, text_y + text_dis * 1, "向前冲刺，可延长滞空时间");
+			break;
+		case 15:
+			drawImg(table_width / 2 - arrow_dis - arrow_width, arrow_y, &pictures[2]);
+			drawImg(table_width / 2 + arrow_dis, arrow_y, &pictures[3]);
+
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(480, title_y, "斩击");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：J   冷却：0s   能量消耗：2");
+			outtextxy(text_x, text_y + text_dis * 1, "向前斩击，根据纵向速度分为上、中、下斩击");
+			outtextxy(text_x, text_y + text_dis * 2, "可摧毁敌人和敌方红色攻击");
+			outtextxy(text_x, text_y + text_dis * 3, "具有一定后摇（可被其他动作打断）");
+			outtextxy(text_x, text_y + text_dis * 4, "快速落地时释放斩击并在落地后命中敌人，将");
+			outtextxy(text_x, text_y + text_dis * 5, "强化下一次斩击");
+			break;
+		case 16:
+			drawImg(table_width / 2 - arrow_dis - arrow_width, arrow_y, &pictures[2]);
+
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(430, title_y, "斩击（强化）");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：J   冷却：0s   能量消耗：2");
+			outtextxy(text_x, text_y + text_dis * 1, "在释放普通斩击的同时，向前释放一道光刃");
+			outtextxy(text_x, text_y + text_dis * 2, "可摧毁一切敌方单位");
+			break;
+		case 21:
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(480, title_y, "影跃");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：D/A   冷却：10s   能量消耗：20");
+			outtextxy(text_x, text_y + text_dis * 1, "按下D跃迁至前方，之后可随时使用第二段");
+			outtextxy(text_x, text_y + text_dis * 2, "第二段：按下A跃迁回原位（不消耗能量）");
+			outtextxy(text_x, text_y + text_dis * 3, "每次跃迁过程中，角色都处于无敌状态");
+			outtextxy(text_x, text_y + text_dis * 4, "角色回到原位后技能进入冷却");
+			break;
+		case 22:
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(480, title_y, "滞缓");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：L   冷却：5s   能量消耗：15");
+			outtextxy(text_x, text_y + text_dis * 1, "持续时间：1.5s");
+			outtextxy(text_x, text_y + text_dis * 2, "减缓一切单位的速度，直至进行下一步操作或");
+			outtextxy(text_x, text_y + text_dis * 3, "持续时间结束");
+			outtextxy(text_x, text_y + text_dis * 4, "技能结束后进入冷却");
+			break;
+		case 23:
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(480, title_y, "脉冲");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：U   冷却：12s   能量消耗：20");
+			outtextxy(text_x, text_y + text_dis * 1, "持续时间：6s");
+			outtextxy(text_x, text_y + text_dis * 2, "持续释放电磁脉冲，屏蔽敌方一切射击");
+			outtextxy(text_x, text_y + text_dis * 3, "持续时间结束后技能进入冷却");
+			break;
+		case 24:
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(480, title_y, "残像");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：I   冷却：10s   能量消耗：30");
+			outtextxy(text_x, text_y + text_dis * 1, "持续时间：8s");
+			outtextxy(text_x, text_y + text_dis * 2, "向后生成一个只能奔跑的残像，残像受到攻击");
+			outtextxy(text_x, text_y + text_dis * 3, "立即死亡。持续时间结束后，若残像存活：①");
+			outtextxy(text_x, text_y + text_dis * 4, "若角色存活，角色回复一点血量；②若角色死");
+			outtextxy(text_x, text_y + text_dis * 5, "亡，角色复活并回复至一点血量。残像消失");
+			outtextxy(text_x, text_y + text_dis * 6, "持续时间结束或残像死亡后技能进入冷却");
+			break;
+		case 25:
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(480, title_y, "炽月");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "按键：O   冷却：20s   能量消耗：60");
+			outtextxy(text_x, text_y + text_dis * 1, "向前释放一道灭绝一切敌人的炽热剑气");
+			outtextxy(text_x, text_y + text_dis * 2, "可摧毁一切敌方单位");
+			outtextxy(text_x, text_y + text_dis * 3, "释放后技能进入冷却");
+			break;
+		case 31:
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(452, title_y, "“骑士”");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "地面敌方单位   击杀分数奖励：50");
+			outtextxy(text_x, text_y + text_dis * 1, "它们数量庞大，永远只遵循一个指令——");
+			outtextxy(text_x, text_y + text_dis * 2, "摧毁面前的一切敌人");
+			break;
+		case 32:
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(452, title_y, "“猎手”");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "地面敌方单位   击杀分数奖励：150");
+			outtextxy(text_x, text_y + text_dis * 1, "每发射两次红色子弹，发射一次蓝色子弹");
+			outtextxy(text_x, text_y + text_dis * 2, "看到玩家后将短暂蓄力并射击，随后若再次看");
+			outtextxy(text_x, text_y + text_dis * 3, "到玩家，则会迅速后撤并重复上述过程");
+			outtextxy(text_x, text_y + text_dis * 4, "它们的狡黠程度，往往超出我们的想象");
+			break;
+		case 33:
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(452, title_y, "“天使”");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "空中敌方单位   击杀分数奖励：50");
+			outtextxy(text_x, text_y + text_dis * 1, "每发射两次红色子弹，发射一次蓝色子弹");
+			outtextxy(text_x, text_y + text_dis * 2, "每隔一段时间进行一次射击");
+			outtextxy(text_x, text_y + text_dis * 3, "它们在你头顶上徘徊，为天空带来安详");
+			break;
+		case 34:
+			settextstyle(title_size, 0, "微软雅黑");
+			outtextxy(452, title_y, "“卫星”");
+			settextstyle(text_size, 0, "微软雅黑");
+			outtextxy(text_x, text_y, "空中敌方单位   击杀分数奖励：150");
+			outtextxy(text_x, text_y + text_dis * 1, "出现并蓄力后，发射一道横向贯穿屏幕的蓝色");
+			outtextxy(text_x, text_y + text_dis * 2, "激光，随后原路返回");
+			outtextxy(text_x, text_y + text_dis * 3, "它们从四周汇聚能量，让前方的阻碍化为灰烬");
+			break;
+		}
+	}
 }

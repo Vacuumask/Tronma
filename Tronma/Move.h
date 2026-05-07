@@ -30,3 +30,37 @@ protected:
 	float commonX = 100;
 	float commomY = 340;
 };
+
+class MoveFall :public Move {
+public:
+	MoveFall(Player* player, float* dt, float* NItime);
+	bool isReady()override;
+	void effect()override;
+	void isOver()override;
+	void run()override;
+protected:
+};
+
+class MoveJump :public Move {
+public:
+	MoveJump(Player* player, float* speed, float* dt, float* NItime);
+	bool isReady()override;
+	void effect()override;
+	void isOver()override;
+	void run()override;
+	void countY();
+protected:
+	int ableTime = 2;
+};
+
+class MoveSprint :public Move {
+public:
+	MoveSprint(Player* player, float* speed, float* dt, float* NItime);
+	bool isReady()override;
+	void effect()override;
+	void isOver()override;
+	void run()override;
+protected:
+
+	FxPlayer FxSp;
+};

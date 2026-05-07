@@ -1,4 +1,4 @@
-#include "SkillEMP.h"
+#include "Skill.h"
 
 SkillEMP::SkillEMP(Player* player, float* dt, float* NItime)
 {
@@ -27,6 +27,16 @@ SkillEMP::SkillEMP(Player* player, float* dt, float* NItime)
 
 	loadPicture();
 	p_animationEffect = new AnimationEffect(x, y, p_x, p_y, pictures);
+
+	Fx.load("../audio/fx/EMP.wav", 2);
+}
+
+SkillEMP::~SkillEMP()
+{
+	if (p_animationEffect != NULL) {
+		delete p_animationEffect;
+		p_animationEffect = NULL;
+	}
 }
 
 void SkillEMP::loadPicture() {
@@ -79,6 +89,7 @@ bool SkillEMP::isReady()
 void SkillEMP::effect()
 {
 	notUsing = false;
+	Fx.play();
 	time = 6;
 	*p_energy -= needEnergy;
 	*p_op_num = 8;
@@ -91,6 +102,7 @@ void SkillEMP::isOver()
 	notUsing = true;
 	Enemy::EMP = false;
 	cd = 12;
+	Fx.stopAll();
 }
 
 void SkillEMP::run()

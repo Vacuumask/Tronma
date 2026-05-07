@@ -6,10 +6,6 @@ Enemy1::Enemy1()
 
 Enemy1::~Enemy1()
 {
-    if (player != NULL) {
-        delete player;
-        player = NULL;
-    }
     if (animationEnemy != NULL) {
         delete animationEnemy;
         animationEnemy = NULL;
@@ -28,6 +24,9 @@ void Enemy1::init() {
 
     loadPicture();
     animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+    ex.load("../audio/fx/ex.wav", 2);
+    FxDamage.load("../audio/fx/attacked.wav", 2);
 }
 
 void Enemy1::loadPicture()
@@ -121,14 +120,6 @@ bool Enemy1::collideS()
     return false;
 }
 
-void Enemy1::damage()
-{
-    canDamage = false;
-    if (player->canBeDamaged == true) {
-        player->health--;
-    }
-}
-
 void Enemy1::damageS()
 {
     shadow->health = 0;
@@ -170,6 +161,7 @@ void Enemy1::beDamaged()
         Player::kill_score += 50;
         Player::kill[0]++;
     }
+    ex.play();
 }
 
 void Enemy1::isOver()
@@ -197,10 +189,6 @@ Enemy1Pool::Enemy1Pool(int& sceneWidth, float* speed, Player* player, Player* sh
 
 Enemy1Pool::~Enemy1Pool()
 {
-    if (player != NULL) {
-        delete player;
-        player = NULL;
-    }
 }
 
 void Enemy1Pool::acquire(int sec)
@@ -218,7 +206,6 @@ void Enemy1Pool::acquire(int sec)
             enemy1[i].alive = true;
             enemy1[i].sec_enum = &sec_enum[sec];
             sec_enum[sec]++;
-            //std::cout << sec_enum[sec];
             break;
         }
     }

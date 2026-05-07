@@ -9,13 +9,12 @@ class Animation {
 public:
 	Animation();
 	void FPS();
-	virtual ~Animation();
 	float dt = 0;
 	static float p_speed;
-
+	static float base_speed;
+	static float pro_speed;
 protected:
 	float* a_speed;
-	Animation* animation = NULL;
 private:
 	LARGE_INTEGER freq, last, current = { 0 };
 };

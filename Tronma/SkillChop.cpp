@@ -1,4 +1,4 @@
-#include "SkillChop.h"
+#include "Skill.h"
 
 SkillChop::SkillChop(Player* player, float* dt, float* NItime)
 {
@@ -19,6 +19,20 @@ SkillChop::SkillChop(Player* player, float* dt, float* NItime)
 	loadPicture();
 	p_animationEffect = new AnimationEffect(p_x, p_y, pictures);
 	lb_animationEffect = new AnimationEffect(&lightBlade.x, &lightBlade.y, pictures);
+	chop.load("../audio/fx/chop.wav", 2);
+	lbFx.load("../audio/fx/lb.wav", 2);
+}
+
+SkillChop::~SkillChop()
+{
+	if (p_animationEffect != NULL) {
+		delete p_animationEffect;
+		p_animationEffect = NULL;
+	}
+	if (lb_animationEffect != NULL) {
+		delete lb_animationEffect;
+		lb_animationEffect = NULL;
+	}
 }
 
 void SkillChop::loadPicture()
@@ -124,9 +138,11 @@ bool SkillChop::isReady()
 void SkillChop::effect()
 {
 	notUsing = false;
+	chop.play();
 	if (superChop == true) {
 		superChop = false;
 		lightBlade.active = true;
+		lbFx.play();
 		lightBlade.x = *p_x + 75;
 		lightBlade.y = *p_y + 40;
 	}

@@ -6,10 +6,6 @@ Bullet2::Bullet2()
 
 Bullet2::~Bullet2()
 {
-	if (player != NULL) {
-		delete player;
-		player = NULL;
-	}
 	if (animationEnemy != NULL) {
 		delete animationEnemy;
 		animationEnemy = NULL;
@@ -28,6 +24,8 @@ void Bullet2::init(){
 
 	loadPicture();
 	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+	FxDamage.load("../audio/fx/attacked.wav", 2);
 }
 
 void Bullet2::loadPicture()
@@ -75,7 +73,7 @@ void Bullet2::run(float* dt)
 
 bool Bullet2::collide()
 {
-	if (active == true && canDamage == true && alive == true) {
+	if (active == true && canDamage == true && alive == true && player->die == false) {
 		return !(x + c_x > player->x + player->c_x + player->c_width || x + c_x + c_width<player->x + player->c_x ||
 			y + c_y>player->y + player->c_y + player->c_height || y + c_y + c_height < player->y + player->c_y);
 	}
@@ -91,44 +89,9 @@ bool Bullet2::collideS()
 	return false;
 }
 
-void Bullet2::damage()
-{
-	canDamage = false;
-	if (player->canBeDamaged == true) {
-		player->health--;
-	}
-}
-
 void Bullet2::damageS()
 {
 	shadow->health = 0;
-}
-
-bool Bullet2::attackedCollide()
-{
-	if (active == true && alive == true) {
-		for (int i = 0; i < player->attack.size(); i++) {
-			if (player->attack[i]->active == true) {
-				switch (i) {
-				case 0:
-					if (canBeDamaged == true) {
-						if (!(x + c_x > player->x + player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->x + player->attack[i]->x ||
-							y + c_y>player->y + player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->y + player->attack[i]->y)) {
-							return true;
-						}
-					}
-					break;
-				default:
-					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
-						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
-						return true;
-					}
-					break;
-				}
-			}
-		}
-	}
-	return false;
 }
 
 void Bullet2::beDamaged()
@@ -150,10 +113,6 @@ Enemy2::Enemy2()
 
 Enemy2::~Enemy2()
 {
-	if (player != NULL) {
-		delete player;
-		player = NULL;
-	}
     if (animationEnemy != NULL) {
         delete animationEnemy;
         animationEnemy = NULL;
@@ -172,6 +131,10 @@ void Enemy2::init() {
 
 	loadPicture();
 	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+	ex.load("../audio/fx/ex.wav", 2);
+	FxDamage.load("../audio/fx/attacked.wav", 2);
+	shoot.load("../audio/fx/Energy_Impulse_02.wav", 2);
 
 	for (int i = 0; i < bullet_Size; i++) {
 		bullet2[i].init();
@@ -280,6 +243,7 @@ void Enemy2::run(float* dt)
 					isShooting = true;
 					chargeTime = 0.5;
 					if (Enemy::EMP == false) {
+						shoot.play();
 						if (shootNum < 2) {
 							acquire(1);
 							shootNum++;
@@ -381,14 +345,6 @@ bool Enemy2::shootDisCollide()
 	return false;
 }
 
-void Enemy2::damage()
-{
-	canDamage = false;
-	if (player->canBeDamaged == true) {
-		player->health--;
-	}
-}
-
 void Enemy2::damageS()
 {
 	shadow->health = 0;
@@ -434,6 +390,7 @@ void Enemy2::beDamaged()
 		Player::kill_score += 150;
 		Player::kill[1]++;
 	}
+	ex.play();
 }
 
 void Enemy2::isOver()
@@ -509,10 +466,6 @@ Enemy2Pool::Enemy2Pool(int& sceneWidth, float* speed, Player* player, Player* sh
 
 Enemy2Pool::~Enemy2Pool()
 {
-    if (player != NULL) {
-        delete player;
-        player = NULL;
-    }
 }
 
 void Enemy2Pool::acquire(int sec)

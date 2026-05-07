@@ -1,9 +1,7 @@
-#include "MoveJump.h"
+#include "Move.h"
 
 MoveJump::MoveJump(Player* player, float* speed, float* dt, float* NItime)
 {
-	//needEnergy = 3;
-
 	p_dt = dt;
 	p_op_num = &player->op_num;
 	p_NItime = NItime;
@@ -57,7 +55,6 @@ void MoveJump::isOver()
 	case 12:
 	case 13:
 	case 14:
-	//case 8:
 		*p_op_num = 0;
 		break;
 	default:

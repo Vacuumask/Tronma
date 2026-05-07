@@ -30,6 +30,8 @@ void Bullet4::init() {
 
 	loadPicture();
 	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+	FxDamage.load("../audio/fx/attacked.wav", 2);
 }
 
 void Bullet4::loadPicture()
@@ -67,41 +69,6 @@ bool Bullet4::collide()
 	if (active == true && canDamage == true && alive == true) {
 		return !(x + c_x > player->x + player->c_x + player->c_width || x + c_x + c_width<player->x + player->c_x ||
 			y + c_y>player->y + player->c_y + player->c_height || y + c_y + c_height < player->y + player->c_y);
-	}
-	return false;
-}
-
-void Bullet4::damage()
-{
-	canDamage = false;
-	if (player->canBeDamaged == true) {
-		player->health--;
-	}
-}
-
-bool Bullet4::attackedCollide()
-{
-	if (active == true && alive == true) {
-		for (int i = 0; i < player->attack.size(); i++) {
-			if (player->attack[i]->active == true) {
-				switch (i) {
-				case 0:
-					if (canBeDamaged == true) {
-						if (!(x + c_x > player->x + player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->x + player->attack[i]->x ||
-							y + c_y>player->y + player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->y + player->attack[i]->y)) {
-							return true;
-						}
-					}
-					break;
-				default:
-					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
-						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
-						return true;
-					}
-					break;
-				}
-			}
-		}
 	}
 	return false;
 }
@@ -148,6 +115,11 @@ void Enemy4::init() {
 
 	loadPicture();
 	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+	ex.load("../audio/fx/ex.wav", 2);
+	FxDamage.load("../audio/fx/attacked.wav", 2);
+	charge.load("../audio/fx/charge.wav", 4);
+	shoot.load("../audio/fx/lazer.wav", 4);
 
 	for (int i = 0; i < bullet_Size; i++) {
 		bullet4[i].init();
@@ -237,6 +209,7 @@ void Enemy4::run(float* dt)
 				x -= *xspeed * 1 * *dt;
 				animationEnemy->run(41);
 				if (x <= 880) {
+					charge.play();
 					isCharging = true;
 					x = 880;
 				}
@@ -248,9 +221,10 @@ void Enemy4::run(float* dt)
 				if (chargeTime <= 0) {
 					isCharging = false;
 					isShooting = true;
-					//chargeTime = 2;
 
 					if (Enemy::EMP == false) {
+						charge.stopAll();
+						shoot.play();
 						acquire(0);
 					}
 				}
@@ -261,7 +235,6 @@ void Enemy4::run(float* dt)
 				if (shootTime <= 0) {
 					isShooting = false;
 					isWaiting = true;
-					//shootTime = 0.6;
 				}
 			}
 			else if (isWaiting == true) {
@@ -270,7 +243,6 @@ void Enemy4::run(float* dt)
 				if (waitTime <= 0) {
 					isWaiting = false;
 					isBacking = true;
-					//waitTime = 1;
 				}
 			}
 			else {
@@ -285,6 +257,7 @@ void Enemy4::run(float* dt)
 			dieTime -= *dt * *xspeed / 300;
 			animationEnemy->run(-4);
 			if (dieTime <= 0) {
+				ex.play();
 				isOver();
 			}
 		}
@@ -302,38 +275,6 @@ bool Enemy4::collide()
 	return false;
 }
 
-void Enemy4::damage()
-{
-}
-
-bool Enemy4::attackedCollide()
-{
-	if (active == true && alive == true) {
-		for (int i = 0; i < player->attack.size(); i++) {
-			if (player->attack[i]->active == true) {
-				switch (i) {
-				case 0:
-					if (canBeDamaged == true) {
-						if (!(x + c_x > player->x + player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->x + player->attack[i]->x ||
-							y + c_y>player->y + player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->y + player->attack[i]->y)) {
-							player->damage = true;
-							return true;
-						}
-					}
-					break;
-				default:
-					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
-						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
-						return true;
-					}
-					break;
-				}
-			}
-		}
-	}
-	return false;
-}
-
 void Enemy4::beDamaged()
 {
 	bullet4[0].isOver();
@@ -345,6 +286,8 @@ void Enemy4::beDamaged()
 	isBacking = false;
 	Player::kill_score += 150;
 	Player::kill[3]++;
+	charge.stopAll();
+	shoot.stopAll();
 }
 
 void Enemy4::isOver()
@@ -353,7 +296,7 @@ void Enemy4::isOver()
 	chargeTime = 2;
 	shootTime = 0.6;
 	waitTime = 1;
-	dieTime = 2;
+	dieTime = 1.6;
 	x = -width;
 	*sec_enum -= 1;
 	active = false;
@@ -401,10 +344,6 @@ Enemy4Pool::Enemy4Pool(int& sceneWidth, float* speed, Player* player, int* sec_e
 
 Enemy4Pool::~Enemy4Pool()
 {
-	if (player != NULL) {
-		delete player;
-		player = NULL;
-	}
 }
 
 void Enemy4Pool::acquire(int sec)

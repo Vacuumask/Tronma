@@ -2,7 +2,6 @@
 #include<conio.h>
 
 #include"Scene.h"
-#include"AnimationBackgroundMenu.h"
 #include"UI.h"
 
 class SceneMenu :public Scene {
@@ -18,11 +17,14 @@ public:
 
 	void initUI();
 
+	void showInsTable();
+
 	bool enterGame = false;
+	bool instruction = false;
+	int ins_num = 0;
 
 private:
 	std::vector<IMAGE> pictures;
 	float x = 0, y = 0;
 	AnimationBackgroundMenu* animationBackgroundMenu = NULL;
-	
 };

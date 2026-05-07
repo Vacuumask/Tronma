@@ -1,6 +1,8 @@
 #include"Animation.h"
 
 float Animation::p_speed = 1.0f;
+float Animation::base_speed = 1.0f;
+float Animation::pro_speed = 0.0f;
 
 Animation::Animation()
 {
@@ -16,11 +18,5 @@ void Animation::FPS()
     if (dt > 0.033f) dt = 0.033f;  // 限制最大间隔
 }
 
-Animation::~Animation()
-{
-    if (animation != NULL) {
-        delete animation;
-        animation = NULL;
-    }
-}
+
 

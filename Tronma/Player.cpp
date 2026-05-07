@@ -19,6 +19,9 @@ Player::Player(float* speed)
 
 	loadPicture();
 	animationPlayer = new AnimationPlayer(&x, &y, speed, pictures);
+
+	FxDie.load("../audio/fx/die.wav", 2);
+	FxRec.load("../audio/fx/recover.wav", 2);
 }
 
 Player::~Player()
@@ -205,8 +208,18 @@ void Player::reset() {
 	canBeDamaged = true;
 	damage = false;
 	die = false;
+	rec = false;
 	animationPlayer->reset();
 	dis_score = 0;
 	kill_score = 0;
 	kill[0] = kill[1] = kill[2] = kill[3] = 0;
+}
+
+void Player::recover()
+{
+	if (rec == true) {
+		FxDie.stopAll();
+		FxRec.play();
+		rec = false;
+	}
 }

@@ -6,19 +6,16 @@ SceneMain::SceneMain()
     loadPicture();
     animationBackgroundMain = new AnimationBackgroundMain(&x, &y, &speed, &sceneWidth, pictures, &ground_Y, &ground_Height, &startGame);
     player = new Player(&speed);
-    //player->op_num = 5;
-
     shadow = new Player(&speed);
-    //shadow->x -= 100;
+
     shadow->y = -150;
-    //shadow->op_num = 92;
 
     initEnemies();
     op = new Op(player, shadow, &speed, &animationBackgroundMain->dt);
     initUI();
 
     gen = std::mt19937(rd());
-    yDist = std::normal_distribution<float>((float)ground_Y, 200.0f);
+    //yDist = std::normal_distribution<float>(340, 200.0f);
     eDist = std::uniform_real_distribution<float>(0.0f, 1.0f);
 }
 
@@ -32,9 +29,9 @@ SceneMain::~SceneMain()
         delete player;
         player = NULL;
     }
-    if (animation != NULL) {
-        delete animation;
-        animation = NULL;
+    if (shadow != NULL) {
+        delete shadow;
+        shadow = NULL;
     }
     if (op != NULL) {
         delete op;
@@ -109,6 +106,7 @@ void SceneMain::render()
 
 void SceneMain::handleEvents()
 {
+    Animation::p_speed = Animation::base_speed + Animation::pro_speed;
     startAniRun();
     
     enemies[0]->run(&animationBackgroundMain->dt);
@@ -129,39 +127,49 @@ void SceneMain::handleEvents()
         if (player->op_num == 5)player->op_num = 63;
         if (startTime > 0) {
             startTime -= animationBackgroundMain->dt;
-            //std::cout << startTime;
         }
     }
 
 
     if (startGame == true) {
+        if (player->dis_score <= 40000) {
+            Animation::pro_speed = ((float)player->dis_score / 60000);
+        }
+        
         op->opRun();
-        if (player->die == false) {
-            
-            generateEnemy();
+        if (player->die == false || shadow->health == 1) {
+            if (player->die == false) {
+                generateEnemy();
+                if (player->health <= 0) {
+                    player->health = 0;
+                    player->canBeDamaged = false;
+                    player->die = true;
+                    player->FxDie.play();
+                }
+            }
             countScore();
         }
-        else {
+
+        player->recover();
+
+        if(player->die == true) {
             player->canBeDamaged = false;
             player->y = 340;
             if (shadow->health == 1) {
-                Animation::p_speed = 1.0f;
+                Animation::base_speed = 1.0f;
             }
             else {
                 op->reset();
                 speed = 300.0f;
-                Animation::p_speed = 0.0f;
+                Animation::base_speed = 0.0f;
+                Animation::pro_speed = 0.0f;
                 dieTime -= animationBackgroundMain->dt;
             }
 
             player->op_num = 99;
         }
 
-        if (player->health == 0) {
-            //player->health = 7;
-            player->canBeDamaged = false;
-            player->die = true;
-        }
+        
 
         if (dieTime <= 0) {
             showEndTable();
@@ -172,8 +180,8 @@ void SceneMain::handleEvents()
         }
     }
 
-    optionsRun();
     playMusic();
+    optionsRun();
 
     FlushBatchDraw();
 }
@@ -185,28 +193,33 @@ void SceneMain::optionsRun()
         if (peekmessage(&msg, EM_MOUSE)) {
             if (msg.message == WM_LBUTTONDOWN) {
                 if (msg.x >= 840 && msg.x <= 990 && msg.y >= 520 && msg.y <= 580) {
-                    //startGame = true;
+                    enterGame.play();
                     startAni = true;
                 }
                 if (msg.x >= 34 && msg.x <= 184 && msg.y >= 520 && msg.y <= 580) {
+                    press.play();
                     startMenu = true;
                 }
                 if (msg.x >= 540 && msg.x <= 750 && msg.y >= 80 && msg.y <= 115 && chooseMap == false) {
+                    press.play();
                     chooseMap = true;
                 }
                 else {
                     if (chooseMap == true) {
                         if (msg.x >= 498 && msg.x <= 750 && msg.y >= 120 && msg.y <= 155 && chooseMap == true) {
+                            press.play();
                             MainOptions::map = 1;
                             animationBackgroundMain->bk_num = 0;
                             animationBackgroundMain->bk_size = 5;
                         }
                         if (msg.x >= 498 && msg.x <= 750 && msg.y >= 160 && msg.y <= 195 && chooseMap == true) {
+                            press.play();
                             MainOptions::map = 2;
                             animationBackgroundMain->bk_num = 5;
                             animationBackgroundMain->bk_size = 6;
                         }
                         if (msg.x >= 498 && msg.x <= 750 && msg.y >= 200 && msg.y <= 235 && chooseMap == true) {
+                            press.play();
                             MainOptions::map = 3;
                             animationBackgroundMain->bk_num = 11;
                             animationBackgroundMain->bk_size = 5;
@@ -215,26 +228,31 @@ void SceneMain::optionsRun()
                     chooseMap = false;
                 }
                 if (msg.x >= 800 && msg.x <= 1010 && msg.y >= 80 && msg.y <= 115 && chooseMusic == false) {
+                    press.play();
                     chooseMusic = true;
                 }
                 else {
                     if (chooseMusic == true) {
                         if (msg.x >= 758 && msg.x <= 1010 && msg.y >= 120 && msg.y <= 155 && chooseMusic == true) {
+                            press.play();
                             MainOptions::music = 1;
                             strcpy_s(introName, "../audio/music/encounter_in.wav");
                             strcpy_s(musicName, "../audio/music/encounter.wav");
                         }
                         if (msg.x >= 758 && msg.x <= 1010 && msg.y >= 160 && msg.y <= 195 && chooseMusic == true) {
+                            press.play();
                             MainOptions::music = 2;
                             strcpy_s(introName, "../audio/music/conflict_in.wav");
                             strcpy_s(musicName, "../audio/music/conflict.wav");
                         }
                         if (msg.x >= 758 && msg.x <= 1010 && msg.y >= 200 && msg.y <= 235 && chooseMusic == true) {
+                            press.play();
                             MainOptions::music = 3;
                             strcpy_s(introName, "../audio/music/The_Orb_in.wav");
                             strcpy_s(musicName, "../audio/music/The_Orb.wav");
                         }
                         if (msg.x >= 758 && msg.x <= 1010 && msg.y >= 240 && msg.y <= 275 && chooseMusic == true) {
+                            press.play();
                             MainOptions::music = 4;
                             strcpy_s(introName, "../audio/music/Air_in.wav");
                             strcpy_s(musicName, "../audio/music/Air.wav");
@@ -249,6 +267,7 @@ void SceneMain::optionsRun()
         if (peekmessage(&msg, EM_MOUSE)) {
             if (msg.message == WM_LBUTTONDOWN) {
                 if (msg.x >= 534 && msg.x <= 804 && msg.y >= 400 && msg.y <= 440) {
+                    press.play();
                     reset();
                 }
             }
@@ -266,37 +285,55 @@ void SceneMain::initEnemies()
 
 void SceneMain::generateEnemy()
 {
-    if (eDist(gen) < 1.0f / (30.0f + 30.0f * (float)enemyNum())) {
-        int sec = generateEnemySection();
+    float pro = 200.0f * exp(-0.0004 * (float)player->dis_score);
+    if (pro < 30)pro = 30;
+
+    for (int i = 0; i < 4; i++) {
+        if (generate_cd[i] > 0) {
+            generate_cd[i] -= animationBackgroundMain->dt;
+        }
+    }
+    
+    int sec = generateEnemySection();
+    if ((eDist(gen) < 1.0f / (pro + 0.4 * pro * (float)enemyNum() + (sec == 3 ? 7 : 60) * pro * sec_enum[sec])) && generate_cd[sec] <= 0) {
         switch (sec) {
         case 3:
-            if (eDist(gen) < 0.8f) {
+            if (eDist(gen) < 0.8f && Player::dis_score >= 100) {
                 enemies[0]->acquire(3);
             }
-            else {
+            else if (Player::dis_score >= 1000) {
                 enemies[1]->acquire(3);
             }
             break;
         case 2:
         case 1:
         case 0:
-            if (sec_enum[sec] == 0 && eDist(gen) < 0.8) {
+            if (eDist(gen) < 0.8 && Player::dis_score >= 500) {
                 enemies[2]->acquire(sec);
             }
-            else {
+            else if (sec_enum[sec] <= 1 && Player::dis_score >= 3000) {
                 enemies[3]->acquire(sec);
             }
         }
+        generate_cd[sec] = 0.5;
     }
 }
 
 int SceneMain::generateEnemySection()
 {
-    float y = yDist(gen);
-    if (y < 0)y = 0;
-    if (y > ground_Y)y = ground_Y;
-    int sec = y / 115;
-    return sec;
+    float y = eDist(gen);
+    if (y <= 0.5) {
+        return 3;
+    }
+    else if (y <= 0.7) {
+        return 2;
+    }
+    else if (y <= 0.9) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
 }
 
 int SceneMain::enemyNum()
@@ -355,24 +392,16 @@ void SceneMain::playMusic()
             }
         }
         else {
-            bg2vol = max_vol;
-            MusicPlayer::setVolume2(bg2vol);
+            bg1vol = max_vol;
+            MusicPlayer::setVolume1(bg1vol);
             MusicPlayer::update();
             if (MusicPlayer::isPlayingIntro == true) {
-                MusicPlayer::play2(musicName);
-                MusicPlayer::playIntro(introName, 2);
+                MusicPlayer::play1(musicName);
+                MusicPlayer::playIntro(introName, 1);
                 MusicPlayer::isPlayingIntro = false;
             }
         }
     }
-    /*else if (startTime <= 36) {
-        MusicPlayer::update();
-        if (MusicPlayer::isPlayingIntro == true) {
-            MusicPlayer::play2(musicName);
-            MusicPlayer::playIntro(introName, 2);
-            MusicPlayer::isPlayingIntro = false;
-        }
-    }*/
 }
 
 void SceneMain::initUI()
@@ -391,7 +420,7 @@ void SceneMain::startAniRun()
         player->animationPlayerRun();
 
         if (startTime >= 9) {
-            Animation::p_speed = 0;
+            Animation::base_speed = 0;
         }
         else if (startTime > 0) {
             if (Enemy::start == true && start_enemy == true) {
@@ -402,7 +431,7 @@ void SceneMain::startAniRun()
                 start_enemy = false;
             }
             speed = 100;
-            Animation::p_speed = 0.5;
+            Animation::base_speed = 0.5;
 
             if (startTime <= 0.8) {
                 if (player->op_num == 63)player->op_num = 64;
@@ -418,9 +447,8 @@ void SceneMain::startAniRun()
         else {
             if (player->op_num == 64) {
                 player->op_num = 0;
-                //player->kill_score = 0;
                 speed = 300;
-                Animation::p_speed = 1.0;
+                Animation::base_speed = 1.0;
                 Enemy::start = false;
             }
             startGame = true;
@@ -430,6 +458,26 @@ void SceneMain::startAniRun()
     else {
         animationBackgroundMain->FPS();
         cleardevice();
+        settextcolor(WHITE);
+        setbkmode(TRANSPARENT);
+        settextstyle(24, 0, "微软雅黑");
+        if (sen == -1)sen = generateEnemySection();
+        if (startTime < 8) {
+            switch (sen) {
+            case 0:
+                outtextxy(350, 500, "TRON可以是任何事物，除了救世主。");
+                break;
+            case 1:
+                outtextxy(350, 500, "瓦解人类的不是TRON，是我们自己。");
+                break;
+            case 2:
+                outtextxy(350, 500, "是时候让这座城市走出TRON的阴影了。");
+                break;
+            case 3:
+                outtextxy(380, 500, "它们能被创造，就能被抹除。");
+                break;
+            }
+        }
     }
 }
 
@@ -487,20 +535,25 @@ void SceneMain::endScore()
 void SceneMain::reset() {
     dieTime = 5;
     startTime = 12;
+    sen = -1;
     startGame = false;
     startAni = false;
     chooseMap = false;
     chooseMusic = false;
     moon = true;
     player->reset();
-    Animation::p_speed = 1.0f;
-    MusicPlayer::stop2();
+    Animation::base_speed = 1.0f;
+    Animation::pro_speed = 0.0f;
+    MusicPlayer::stop1();
     MusicPlayer::stopIn();
     MusicPlayer::isPlayingIntro = true;
     MusicPlayer::setVolume1(Scene::max_vol);
     MusicPlayer::setVolume2(0.0f);
     for (int i = 0; i < 5; i++) {
         sec_enum[i] = 0;
+    }
+    for (int i = 0; i < 4; i++) {
+        generate_cd[i] = 0;
     }
     endTable = false;
     startMenu = true;

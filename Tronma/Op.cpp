@@ -64,9 +64,9 @@ void Op::opRun()
 	skillShadow->run();
 	skillChop->lightBladeRun();
 	skillMoon->moonRun();
+	energyRecover();
+	cdRecover();
 	if (*p_die == false) {
-		energyRecover();
-		cdRecover();
 
 		bool currentJump = (GetAsyncKeyState('W') & 0x8000) != 0;
 		bool currentSprint = (GetAsyncKeyState('K') & 0x8000) != 0;

@@ -41,23 +41,19 @@ void Game::init()
 	initgraph(widgetWidth, widgetHeight, EW_SHOWCONSOLE);
 	setbkcolor(BLACK);
 	cleardevice();
+	MusicPlayer::init();
 	sceneMenu = new SceneMenu;
 	sceneMain = new SceneMain;
-	animation = new Animation;
-	MusicPlayer::init();
 }
 
 
 void Game::clean()
 {
-	if (currentScene != NULL) {
-		delete currentScene;
+	if (sceneMenu != NULL) {
+		delete sceneMenu;
 	}
-	if (animation != NULL) {
-		delete animation;
-	}
-	if (player != NULL) {
-		delete player;
+	if (sceneMain != NULL) {
+		delete sceneMain;
 	}
 }
 

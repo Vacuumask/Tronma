@@ -10,10 +10,6 @@ AnimationPlayer::AnimationPlayer(float* x, float* y, float* speed, std::vector<I
 
 AnimationPlayer::~AnimationPlayer()
 {
-    if (animation != NULL) {
-        delete animation;
-        animation = NULL;
-    }
 }
 
 void AnimationPlayer::run(int& op_num) {

@@ -11,10 +11,6 @@ AnimationEnemy::AnimationEnemy(float* x, float* y, float* speed, std::vector<IMA
 
 AnimationEnemy::~AnimationEnemy()
 {
-    if (animation != NULL) {
-        delete animation;
-        animation = NULL;
-    }
 }
 
 void AnimationEnemy::run(int e_num) {

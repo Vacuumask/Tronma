@@ -10,6 +10,7 @@ struct Player :public Character
 	void loadPicture();
 	void animationPlayerRun();
 	void reset();
+	void recover();
 
 	int health = 7;
 	int energy = 100;
@@ -18,6 +19,7 @@ struct Player :public Character
 	bool canBeDamaged = true;
 	bool damage = false;
 	bool die = false;
+	bool rec = false;
 
 	static int dis_score;
 	static int kill_score;
@@ -27,4 +29,7 @@ struct Player :public Character
 	std::vector<IMAGE> pictures;
 	std::vector<Attack*> attack;
 	AnimationPlayer* animationPlayer = NULL;
+
+	FxPlayer FxDie;
+	FxPlayer FxRec;
 };

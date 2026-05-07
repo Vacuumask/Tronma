@@ -36,10 +36,8 @@ protected:
 
 	int a_num6 = 42;
 	float a_switch6 = 0;
-
 	int a_num63 = 36;
 	float a_switch63 = 0;
-
 	int a_num64 = 52;
 	float a_switch64 = 0;
 

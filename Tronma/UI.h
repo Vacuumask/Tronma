@@ -117,6 +117,7 @@ protected:
 class SkillCondition :public UI {
 public:
 	SkillCondition(Op* op);
+	SkillCondition();
 	~SkillCondition();
 	void loadPicture()override;
 	void run()override;
@@ -172,4 +173,46 @@ protected:
 	float e_y = 180;
 	float e_size = 40;
 	float e_gap = 10;
+};
+
+class InsTable :public UI {
+public:
+	InsTable(int *ins_num);
+	void loadPicture()override;
+	void run()override;
+protected:
+	int* ins_num;
+
+	float table_width = sceneWidth;
+	float table_height = sceneHeight;
+
+	float ins_y = 76;
+	float ins_width = 486;
+	float ins_height = 369;
+
+	float arrow_dis = 260;
+	float arrow_y = 230;
+	float arrow_width = 20;
+	float arrow_height = 60;
+
+	float player_x = 80;
+	float player_size = 180;
+
+	float e_x = 820;
+	float e_y = 100;
+	float e1_size = 100;
+	float e2_size = 50;
+	float e3_size = 60;
+	float e4_size = 100;
+
+	float title_size = 40;
+	float title_y = 110;
+	float text_size = 28;
+	float text_x = 300;
+	float text_y = 180;
+	float text_dis = 32;
+
+	float back_y = 554;
+	float back_width = 300;
+	float back_height = 40;
 };

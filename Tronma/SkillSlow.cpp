@@ -1,8 +1,8 @@
-#include "SkillSlow.h"
+#include "Skill.h"
 
 SkillSlow::SkillSlow(Player* player, float* speed, float* dt, float* NItime)
 {
-	needEnergy = 20;
+	needEnergy = 15;
 
 	p_dt = dt;
 	p_op_num = &player->op_num;

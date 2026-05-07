@@ -5,14 +5,15 @@ SceneMenu::SceneMenu()
     loadPicture();
     animationBackgroundMenu = new AnimationBackgroundMenu(&x, &y, pictures, &enterGame);
     initUI();
-    
+    Scene::press.load("../audio/fx/press.wav", 2);
+    Scene::enterGame.load("../audio/fx/enterGame.wav", 2);
 }
 
 SceneMenu::~SceneMenu()
 {
-    if (animation != NULL) {
-        delete animation;
-        animation = NULL;
+    if (animationBackgroundMenu != NULL) {
+        delete animationBackgroundMenu;
+        animationBackgroundMenu = NULL;
     }
     for (int i = 0; i < ui.size(); i++) {
         if (ui[i] != NULL) {
@@ -44,6 +45,10 @@ void SceneMenu::handleEvents()
     animationBackgroundMenu->run();
     ui[1]->run();
     ui[0]->run();
+    if (instruction == true) {
+        showInsTable();
+        ui[3]->run();
+    }
     FlushBatchDraw();
     optionsRun();
     playMusic();
@@ -52,14 +57,79 @@ void SceneMenu::handleEvents()
 void SceneMenu::optionsRun()
 {
     ExMessage msg;
-    if (enterGame == true) {
+    if (enterGame == true && instruction == false) {
         if (peekmessage(&msg, EM_MOUSE)) {
             if (msg.message == WM_LBUTTONDOWN) {
                 if (msg.x >= 337 && msg.x <= 687 && msg.y >= 260 && msg.y <= 320) {
+                    press.play();
                     startMain = true;
                 }
+                if (msg.x >= 337 && msg.x <= 687 && msg.y >= 340 && msg.y <= 400) {
+                    press.play();
+                    instruction = true;
+                    ins_num = 0;
+                }
                 if (msg.x >= 337 && msg.x <= 687 && msg.y >= 420 && msg.y <= 480) {
+                    press.play();
                     exitGame = true;
+                }
+            }
+        }
+    }
+    else if (instruction == true) {
+        if (peekmessage(&msg, EM_MOUSE)) {
+            if (msg.message == WM_LBUTTONDOWN) {
+                if (msg.x >= 120 && msg.x <= 200 && msg.y >= 240 && msg.y <= 360) {
+                    ins_num = 11;
+                    press.play();
+                }
+                else if (ins_num >= 11 && ins_num < 16 && msg.x >= 772 && msg.x <= 792 && msg.y >= 230 && msg.y <= 290) {
+                    ins_num++;
+                    press.play();
+                }
+                else if (ins_num > 11 && ins_num <= 16 && msg.x >= 232 && msg.x <= 252 && msg.y >= 230 && msg.y <= 290) {
+                    ins_num--;
+                    press.play();
+                }
+                else if (msg.x >= 322 && msg.x <= 382 && msg.y >= 480 && msg.y <= 540) {
+                    ins_num = 21;
+                    press.play();
+                }
+                else if (msg.x >= 402 && msg.x <= 462 && msg.y >= 480 && msg.y <= 540) {
+                    ins_num = 22;
+                    press.play();
+                }
+                else if (msg.x >= 482 && msg.x <= 542 && msg.y >= 480 && msg.y <= 540) {
+                    ins_num = 23;
+                    press.play();
+                }
+                else if (msg.x >= 562 && msg.x <= 622 && msg.y >= 480 && msg.y <= 540) {
+                    ins_num = 24;
+                    press.play();
+                }
+                else if (msg.x >= 642 && msg.x <= 702 && msg.y >= 480 && msg.y <= 540) {
+                    ins_num = 25;
+                    press.play();
+                }
+                else if (msg.x >= 820 && msg.x <= 920 && msg.y >= 100 && msg.y <= 200) {
+                    ins_num = 31;
+                    press.play();
+                }
+                else if (msg.x >= 820 && msg.x <= 920 && msg.y >= 200 && msg.y <= 300) {
+                    ins_num = 32;
+                    press.play();
+                }
+                else if (msg.x >= 820 && msg.x <= 920 && msg.y >= 300 && msg.y <= 400) {
+                    ins_num = 33;
+                    press.play();
+                }
+                else if (msg.x >= 820 && msg.x <= 920 && msg.y >= 400 && msg.y <= 500) {
+                    ins_num = 34;
+                    press.play();
+                }
+                else if (msg.x >= 362 && msg.x <= 662 && msg.y >= 554 && msg.y <= 594) {
+                    instruction = false;
+                    press.play();
                 }
             }
         }
@@ -100,4 +170,11 @@ void SceneMenu::initUI()
 {
     ui.push_back(new Title(&enterGame));
     ui.push_back(new MenuOptions(&enterGame));
+    ui.push_back(new InsTable(&ins_num));
+    ui.push_back(new SkillCondition());
+}
+
+void SceneMenu::showInsTable()
+{
+    ui[2]->run();
 }

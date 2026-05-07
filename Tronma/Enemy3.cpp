@@ -7,10 +7,6 @@ Bullet3::Bullet3()
 
 Bullet3::~Bullet3()
 {
-	if (player != NULL) {
-		delete player;
-		player = NULL;
-	}
 	if (animationEnemy != NULL) {
 		delete animationEnemy;
 		animationEnemy = NULL;
@@ -28,6 +24,8 @@ void Bullet3::init() {
 
 	loadPicture();
 	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+	FxDamage.load("../audio/fx/attacked.wav", 2);
 }
 
 void Bullet3::loadPicture()
@@ -70,44 +68,9 @@ void Bullet3::run(float* dt)
 
 bool Bullet3::collide()
 {
-	if (active == true && canDamage == true && alive == true) {
+	if (active == true && canDamage == true && alive == true && player->die == false) {
 		return !(x + c_x > player->x + player->c_x + player->c_width || x + c_x + c_width<player->x + player->c_x ||
 			y + c_y>player->y + player->c_y + player->c_height || y + c_y + c_height < player->y + player->c_y);
-	}
-	return false;
-}
-
-void Bullet3::damage()
-{
-	canDamage = false;
-	if (player->canBeDamaged == true) {
-		player->health--;
-	}
-}
-
-bool Bullet3::attackedCollide()
-{
-	if (active == true && alive == true) {
-		for (int i = 0; i < player->attack.size(); i++) {
-			if (player->attack[i]->active == true) {
-				switch (i) {
-				case 0:
-					if (canBeDamaged == true) {
-						if (!(x + c_x > player->x + player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->x + player->attack[i]->x ||
-							y + c_y>player->y + player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->y + player->attack[i]->y)) {
-							return true;
-						}
-					}
-					break;
-				default:
-					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
-						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
-						return true;
-					}
-					break;
-				}
-			}
-		}
 	}
 	return false;
 }
@@ -132,10 +95,6 @@ Enemy3::Enemy3()
 
 Enemy3::~Enemy3()
 {
-	if (player != NULL) {
-		delete player;
-		player = NULL;
-	}
 	if (animationEnemy != NULL) {
 		delete animationEnemy;
 		animationEnemy = NULL;
@@ -153,6 +112,10 @@ void Enemy3::init() {
 
 	loadPicture();
 	animationEnemy = new AnimationEnemy(&x, &y, xspeed, pictures);
+
+	ex.load("../audio/fx/ex.wav", 2);
+	FxDamage.load("../audio/fx/attacked.wav", 2);
+	shoot.load("../audio/fx/Energy_Impulse_03.wav", 4);
 
 	for (int i = 0; i < bullet_Size; i++) {
 		bullet3[i].init();
@@ -247,6 +210,7 @@ void Enemy3::run(float* dt)
 						isCharging = false;
 						chargeTime = 0.3;
 						if (Enemy::EMP == false) {
+							shoot.play();
 							if (shootNum < 2) {
 								acquire(1);
 								shootNum++;
@@ -296,42 +260,6 @@ bool Enemy3::collide()
 	return false;
 }
 
-void Enemy3::damage()
-{
-	canDamage = false;
-	if (player->canBeDamaged == true) {
-		player->health--;
-	}
-}
-
-bool Enemy3::attackedCollide()
-{
-	if (active == true && alive == true) {
-		for (int i = 0; i < player->attack.size(); i++) {
-			if (player->attack[i]->active == true) {
-				switch (i) {
-				case 0:
-					if (canBeDamaged == true) {
-						if (!(x + c_x > player->x + player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->x + player->attack[i]->x ||
-							y + c_y>player->y + player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->y + player->attack[i]->y)) {
-							player->damage = true;
-							return true;
-						}
-					}
-					break;
-				default:
-					if (!(x + c_x > player->attack[i]->x + player->attack[i]->width || x + c_x + c_width<player->attack[i]->x ||
-						y + c_y>player->attack[i]->y + player->attack[i]->height || y + c_y + c_height < player->attack[i]->y)) {
-						return true;
-					}
-					break;
-				}
-			}
-		}
-	}
-	return false;
-}
-
 void Enemy3::beDamaged()
 {
 	canDamage = false;
@@ -341,6 +269,7 @@ void Enemy3::beDamaged()
 		Player::kill_score += 50;
 		Player::kill[2]++;
 	}
+	ex.play();
 }
 
 void Enemy3::isOver()
@@ -409,10 +338,6 @@ Enemy3Pool::Enemy3Pool(int& sceneWidth, float* speed, Player* player, int* sec_e
 
 Enemy3Pool::~Enemy3Pool()
 {
-	if (player != NULL) {
-		delete player;
-		player = NULL;
-	}
 }
 
 void Enemy3Pool::acquire(int sec)

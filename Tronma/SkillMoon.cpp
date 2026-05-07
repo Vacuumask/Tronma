@@ -1,4 +1,4 @@
-#include"SkillMoon.h"
+#include"Skill.h"
 
 SkillMoon::SkillMoon(Player* player, float* dt, float* NItime) {
 	needEnergy = 60;
@@ -16,6 +16,20 @@ SkillMoon::SkillMoon(Player* player, float* dt, float* NItime) {
 	loadPicture();
 	p_animationEffect = new AnimationEffect(p_x, p_y, pictures);
 	m_animationEffect = new AnimationEffect(&moon.x, &moon.y, pictures);
+
+	FxMoon.load("../audio/fx/moon.wav", 2);
+}
+
+SkillMoon::~SkillMoon()
+{
+	if (p_animationEffect != NULL) {
+		delete p_animationEffect;
+		p_animationEffect = NULL;
+	}
+	if (m_animationEffect != NULL) {
+		delete m_animationEffect;
+		m_animationEffect = NULL;
+	}
 }
 
 void SkillMoon::loadPicture() {
@@ -71,6 +85,7 @@ void SkillMoon::effect()
 {
 	notUsing = false;
 	moon.active = true;
+	FxMoon.play();
 	*p_op_num = 10;
 	moon.x = *p_x;
 	*p_energy -= needEnergy;

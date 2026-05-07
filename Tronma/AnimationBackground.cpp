@@ -1,4 +1,4 @@
-#include"AnimationBackgroundMain.h"
+#include"AnimationBackground.h"
 
 AnimationBackgroundMain::AnimationBackgroundMain(float* x, float* y, float* speed, int* width, std::vector<IMAGE>& pictures, int* ground_Y, int* ground_Height, bool* startGame)
 {
@@ -46,10 +46,33 @@ void AnimationBackgroundMain::drawGround()
 	if (g_x < -*a_width)g_x = 0;
 }
 
-AnimationBackgroundMain::~AnimationBackgroundMain()
+AnimationBackgroundMenu::AnimationBackgroundMenu(float* x, float* y, std::vector<IMAGE>& pictures, bool* enterGame)
 {
-	if (animation != NULL) {
-		delete animation;
-		animation = NULL;
+	a_x = x;
+	a_y = y;
+	a_pictures = pictures;
+	for (int i = 0; i < pictures.size(); i++) {
+		a_X.push_back(0);
+	}
+	this->enterGame = enterGame;
+}
+
+void AnimationBackgroundMenu::run()
+{
+	FPS();
+	drawBackground();
+}
+
+void AnimationBackgroundMenu::drawBackground()
+{
+	cleardevice();
+	if (*enterGame == false) {
+		bk1_time -= dt;
+		if (bk1_time > 0) {
+			drawImg(*a_x, *a_y, &a_pictures[0]);
+		}
+	}
+	if (bk1_time <= 0) {
+		drawImg(*a_x, *a_y, &a_pictures[1]);
 	}
 }

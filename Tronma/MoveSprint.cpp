@@ -1,4 +1,4 @@
-#include "MoveSprint.h"
+#include "Move.h"
 
 MoveSprint::MoveSprint(Player* player, float* speed, float* dt, float* NItime)
 {
@@ -11,6 +11,8 @@ MoveSprint::MoveSprint(Player* player, float* speed, float* dt, float* NItime)
 
 	p_y = &player->y;
 	p_energy = &player->energy;
+
+	FxSp.load("../audio/fx/sprint.wav", 2);
 }
 
 bool MoveSprint::isReady()
@@ -35,13 +37,13 @@ bool MoveSprint::isReady()
 void MoveSprint::effect()
 {
 	notUsing = false;
+	FxSp.play();
 	*p_op_num = 3;
 	*p_energy -= needEnergy;
 	time = 0.3;
 	windDown = 0.1;
 	*p_NItime = time;
-	Animation::p_speed *= 2;
-	//std::cout << *p_speed;
+	Animation::base_speed += 1.0;
 }
 
 void MoveSprint::isOver()
@@ -49,9 +51,10 @@ void MoveSprint::isOver()
 	*p_op_num = (*p_y < commomY ? 13 : 0);
 	time = 0;
 	*p_NItime = 0;
-	Animation::p_speed /= 2;
+	if (Animation::base_speed >= 2.0) {
+		Animation::base_speed -= 1.0;
+	}
 	notUsing = true;
-	//std::cout << *p_speed;
 
 }
 

@@ -22,8 +22,4 @@ private:
 	SceneMain* sceneMain = NULL;
 	const int widgetWidth = 1024;
 	const int widgetHeight = 600;
-	Animation* animation = NULL;
-	Player* player = NULL;
-
-
 };

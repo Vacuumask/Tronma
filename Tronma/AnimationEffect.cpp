@@ -18,10 +18,7 @@ AnimationEffect::AnimationEffect(float* x, float* y, float* p_x, float* p_y, std
 
 AnimationEffect::~AnimationEffect()
 {
-    if (animation != NULL) {
-        delete animation;
-        animation = NULL;
-    }
+
 }
 
 void AnimationEffect::run(int e_num) 

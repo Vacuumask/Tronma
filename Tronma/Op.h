@@ -1,15 +1,8 @@
 #pragma once
 #include"Animation.h"
 #include"Player.h"
-#include"MoveJump.h"
-#include"MoveSprint.h"
-#include"MoveFall.h"
-#include"SkillChop.h"
-#include"SkillTeleport.h"
-#include"SkillSlow.h"
-#include"SkillEMP.h"
-#include"SkillShadow.h"
-#include"SkillMoon.h"
+#include"Move.h"
+#include"Skill.h"
 
 class Op {
 public:

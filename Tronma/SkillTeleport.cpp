@@ -1,4 +1,4 @@
-#include"SkillTeleport.h"
+#include"Skill.h"
 
 SkillTeleport::SkillTeleport(Player* player, float* dt, float* NItime)
 {
@@ -13,6 +13,8 @@ SkillTeleport::SkillTeleport(Player* player, float* dt, float* NItime)
 	p_energy = &player->energy;
 
 	canBeDamaged = &player->canBeDamaged;
+
+	Fx.load("../audio/fx/tele.wav", 2);
 }
 
 bool SkillTeleport::isReady()
@@ -39,6 +41,7 @@ bool SkillTeleport::isReady()
 void SkillTeleport::effect()
 {
 	notUsing = false;
+	Fx.play();
 	*canBeDamaged = false;
 	time = 0.8;
 	*p_NItime = time;
