@@ -15,7 +15,7 @@ void Animation::FPS()
     QueryPerformanceCounter(&current);
     dt = (float)(current.QuadPart - last.QuadPart) / freq.QuadPart;
     last = current;
-    if (dt > 0.033f) dt = 0.033f;  // 限制最大间隔
+    if (dt > 0.033f) dt = 0.033f;
 }
 
 

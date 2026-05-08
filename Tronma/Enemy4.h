@@ -34,6 +34,7 @@ public:
 	bool isShooting = false;
 	bool isWaiting = false;
 	bool isBacking = false;
+	bool exp = false;
 
 	float chargeTime = 2.6;
 	float shootTime = 0.6;

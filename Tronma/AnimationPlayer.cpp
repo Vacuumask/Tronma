@@ -8,10 +8,6 @@ AnimationPlayer::AnimationPlayer(float* x, float* y, float* speed, std::vector<I
     a_pictures = pictures;
 }
 
-AnimationPlayer::~AnimationPlayer()
-{
-}
-
 void AnimationPlayer::run(int& op_num) {
     FPS();
     switch (op_num) {

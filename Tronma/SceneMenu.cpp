@@ -32,14 +32,6 @@ void SceneMenu::loadPicture()
     pictures.push_back(img2);
 }
 
-void SceneMenu::update()
-{
-}
-
-void SceneMenu::render()
-{
-}
-
 void SceneMenu::handleEvents()
 {
     animationBackgroundMenu->run();

@@ -1,5 +1,4 @@
 #include "AnimationEnemy.h"
-#include "AnimationEffect.h"
 
 AnimationEnemy::AnimationEnemy(float* x, float* y, float* speed, std::vector<IMAGE>& pictures)
 {
@@ -7,10 +6,6 @@ AnimationEnemy::AnimationEnemy(float* x, float* y, float* speed, std::vector<IMA
     a_y = y;
     a_speed = speed;
     a_pictures = pictures;
-}
-
-AnimationEnemy::~AnimationEnemy()
-{
 }
 
 void AnimationEnemy::run(int e_num) {

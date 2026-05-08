@@ -2,7 +2,6 @@
 
 Bullet4::Bullet4()
 {
-	
 }
 
 Bullet4::~Bullet4()
@@ -89,15 +88,11 @@ void Bullet4::isOver()
 
 Enemy4::Enemy4()
 {
-	
+
 }
 
 Enemy4::~Enemy4()
 {
-	if (player != NULL) {
-		delete player;
-		player = NULL;
-	}
 	if (animationEnemy != NULL) {
 		delete animationEnemy;
 		animationEnemy = NULL;
@@ -256,8 +251,11 @@ void Enemy4::run(float* dt)
 		else {
 			dieTime -= *dt * *xspeed / 300;
 			animationEnemy->run(-4);
-			if (dieTime <= 0) {
+			if (dieTime <= 0.8 && exp == false) {
 				ex.play();
+				exp = true;
+			}
+			if (dieTime <= 0) {
 				isOver();
 			}
 		}
@@ -306,6 +304,7 @@ void Enemy4::isOver()
 	isShooting = false;
 	isWaiting = false;
 	isBacking = false;
+	exp = false;
 }
 
 void Enemy4::bulletOver()
@@ -325,7 +324,6 @@ void Enemy4::acquire(int bullet)
 		bullet4[0].alive = true;
 
 		bullet4[0].player = player;
-		//bullet4[0].xspeed = xspeed;
 	}
 }
 
@@ -369,7 +367,6 @@ void Enemy4Pool::acquire(int sec)
 
 			enemy4[i].sec_enum = &sec_enum[sec];
 			sec_enum[sec]++;
-			//std::cout << sec_enum[sec];
 			break;
 		}
 	}

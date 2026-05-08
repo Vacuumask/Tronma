@@ -368,7 +368,6 @@ void Enemy3Pool::acquire(int sec)
 
 			enemy3[i].sec_enum = &sec_enum[sec];
 			sec_enum[sec]++;
-			//std::cout << sec_enum[sec];
 			break;
 		}
 	}

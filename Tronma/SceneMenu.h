@@ -9,8 +9,6 @@ public:
 	SceneMenu();
 	~SceneMenu();
 	void loadPicture()override;
-	void update() override;
-	void render()override;
 	void handleEvents() override;
 	void optionsRun()override;
 	void playMusic()override;

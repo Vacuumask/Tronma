@@ -38,7 +38,6 @@ void MoveFall::effect()
 	*p_op_num = 2;
 	*p_energy -= needEnergy;
 	*p_NItime = -1;
-	*y_speed = 30000 * *p_dt;
 }
 
 void MoveFall::isOver()
@@ -54,6 +53,7 @@ void MoveFall::isOver()
 void MoveFall::run()
 {
 	if (notUsing == false) {
+		*y_speed = 30000 * *p_dt;
 		if (*p_y >= commomY) {
 			isOver();
 		}

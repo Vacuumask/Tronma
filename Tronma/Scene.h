@@ -19,8 +19,6 @@ public:
 	Scene() = default;
 	virtual ~Scene() = default;
 	virtual void loadPicture() = 0;
-	virtual void update() = 0;
-	virtual void render() = 0;
 	virtual void handleEvents() = 0;
 	virtual void optionsRun() = 0;
 	virtual void playMusic() = 0;

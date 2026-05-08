@@ -20,7 +20,6 @@ protected:
 class Title :public UI{
 public:
 	Title(bool* enterGame);
-	~Title();
 	void loadPicture()override;
 	void run()override;
 protected:
@@ -34,7 +33,6 @@ protected:
 class MenuOptions :public UI {
 public:
 	MenuOptions(bool* enterGame);
-	~MenuOptions();
 	void loadPicture()override;
 	void run()override;
 
@@ -55,7 +53,6 @@ protected:
 class MainOptions :public UI {
 public:
 	MainOptions(bool* startGame, bool* chooseMap, bool* chooseMusic);
-	~MainOptions();
 	void loadPicture()override;
 	void run()override;
 
@@ -90,7 +87,6 @@ protected:
 class PlayerCondition :public UI {
 public:
 	PlayerCondition(Player* player);
-	~PlayerCondition();
 	void loadPicture()override;
 	void run()override;
 protected:
@@ -118,7 +114,6 @@ class SkillCondition :public UI {
 public:
 	SkillCondition(Op* op);
 	SkillCondition();
-	~SkillCondition();
 	void loadPicture()override;
 	void run()override;
 protected:

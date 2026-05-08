@@ -1,4 +1,5 @@
 d:\vmk\uni\c++\tronma\tronma\x64\release\vc143.pdb
+d:\vmk\uni\c++\tronma\tronma\x64\release\scenemenu.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\scenemain.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\scene.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\player.obj
@@ -16,8 +17,7 @@ d:\vmk\uni\c++\tronma\tronma\x64\release\audio.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\animationplayer.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\animationenemy.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\animationeffect.obj
-d:\vmk\uni\c++\tronma\tronma\x64\release\animationbackgroundmenu.obj
-d:\vmk\uni\c++\tronma\tronma\x64\release\animationbackgroundmain.obj
+d:\vmk\uni\c++\tronma\tronma\x64\release\animationbackground.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\animation.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\ui.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\skillteleport.obj
@@ -27,7 +27,6 @@ d:\vmk\uni\c++\tronma\tronma\x64\release\skillmoon.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\skillemp.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\movejump.obj
 d:\vmk\uni\c++\tronma\tronma\x64\release\skillchop.obj
-d:\vmk\uni\c++\tronma\tronma\x64\release\scenemenu.obj
 d:\vmk\uni\c++\tronma\x64\release\tronma.exe
 d:\vmk\uni\c++\tronma\x64\release\tronma.pdb
 d:\vmk\uni\c++\tronma\tronma\x64\release\tronma.ipdb

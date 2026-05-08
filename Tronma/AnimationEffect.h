@@ -6,7 +6,6 @@ class AnimationEffect :public Animation {
 public:
 	AnimationEffect(float* x, float* y, std::vector<IMAGE>& pictures);
 	AnimationEffect(float* x, float* y, float* p_x, float* p_y, std::vector<IMAGE>& pictures);
-	~AnimationEffect();
 	void run(int e_num);
 	void reset();
 protected:

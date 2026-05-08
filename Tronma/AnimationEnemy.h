@@ -5,7 +5,6 @@
 class AnimationEnemy :public Animation {
 public:
 	AnimationEnemy(float* x, float* y, float* speed, std::vector<IMAGE>& pictures);
-	~AnimationEnemy();
 	void run(int e_num);
 	void reset(int e_num);
 	void reset();

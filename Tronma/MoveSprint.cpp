@@ -7,6 +7,7 @@ MoveSprint::MoveSprint(Player* player, float* speed, float* dt, float* NItime)
 	p_dt = dt;
 	p_op_num = &player->op_num;
 	p_speed = speed;
+	y_speed = &player->ySpeed;
 	p_NItime = NItime;
 
 	p_y = &player->y;
@@ -63,6 +64,7 @@ void MoveSprint::run()
 	if (notUsing == false) {
 		if (time > 0) {
 			time -= *p_dt;
+			*y_speed = 0;
 		}
 		else {
 			isOver();

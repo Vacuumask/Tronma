@@ -12,11 +12,6 @@ PlayerCondition::PlayerCondition(Player* player)
 	energy = &player->energy;
 }
 
-PlayerCondition::~PlayerCondition()
-{
-
-}
-
 void PlayerCondition::loadPicture()
 {
 	IMAGE img1, img2, img3;
@@ -82,11 +77,6 @@ MenuOptions::MenuOptions(bool* enterGame)
 	this->enterGame = enterGame;
 }
 
-MenuOptions::~MenuOptions()
-{
-
-}
-
 void MenuOptions::loadPicture()
 {
 	IMAGE img1;
@@ -123,11 +113,6 @@ Title::Title(bool* enterGame)
 	loadPicture();
 }
 
-Title::~Title()
-{
-
-}
-
 void Title::loadPicture()
 {
 	IMAGE img1;
@@ -156,11 +141,6 @@ MainOptions::MainOptions(bool* startGame, bool* chooseMap, bool* chooseMusic)
 	this->chooseMap = chooseMap;
 	this->chooseMusic = chooseMusic;
 	loadPicture();
-}
-
-MainOptions::~MainOptions()
-{
-
 }
 
 void MainOptions::loadPicture()
@@ -220,7 +200,7 @@ void MainOptions::run()
 
 
 	if (*chooseMusic == true) {
-		for (int i = 1; i <= 4; i++) {
+		for (int i = 1; i <= 5; i++) {
 			drawImg(music_x - sl_width * 0.2, sl_y + i * dis2, &pictures[3]);
 			settextstyle(29, 0, "Arial Black");
 			switch (i) {
@@ -235,6 +215,9 @@ void MainOptions::run()
 				break;
 			case 4:
 				outtextxy(music_x + 10, sl_y + i * dis2 + 3, "Air");
+				break;
+			case 5:
+				outtextxy(music_x + 10, sl_y + i * dis2 + 3, "???");
 				break;
 			}
 		}
@@ -261,11 +244,6 @@ SkillCondition::SkillCondition(Op* op)
 SkillCondition::SkillCondition()
 {
 	loadPicture();
-}
-
-SkillCondition::~SkillCondition()
-{
-
 }
 
 void SkillCondition::loadPicture()

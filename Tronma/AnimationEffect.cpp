@@ -16,11 +16,6 @@ AnimationEffect::AnimationEffect(float* x, float* y, float* p_x, float* p_y, std
     a_pictures = pictures;
 }
 
-AnimationEffect::~AnimationEffect()
-{
-
-}
-
 void AnimationEffect::run(int e_num) 
 {
     FPS();
@@ -56,8 +51,6 @@ void AnimationEffect::run(int e_num)
         if (a_num43 == 37)a_num43 = 14;
         break;
     case 8:
-        //IMAGE temp = a_pictures[a_num5];
-        //temp.Resize(size5, size5);
         if (a_num5 < 12) {
             drawImg(*(a_x + a_num5) + *b_x + 10, *(a_y + a_num5) + *b_y, &a_pictures[a_num5]);
         }
@@ -65,7 +58,6 @@ void AnimationEffect::run(int e_num)
         if (a_switch5 >= 0.012) {
             a_switch5 = 0;
             a_num5++;
-            //size5 += 64;
         }
         if (a_num5 == 150)a_num5 = 0;
         break;

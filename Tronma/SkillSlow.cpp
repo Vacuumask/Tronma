@@ -23,7 +23,6 @@ bool SkillSlow::isReady()
 		case 41:
 		case 42:
 		case 43:
-		//case 8:
 			return true;
 			break;
 		}
@@ -46,7 +45,6 @@ void SkillSlow::isOver()
 	cd = 5;
 	*p_speed *= 5;
 	MusicPlayer::reset();
-	//MusicPlayer::isSlowing = false;
 }
 
 void SkillSlow::run()

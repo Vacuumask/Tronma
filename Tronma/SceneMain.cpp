@@ -15,7 +15,6 @@ SceneMain::SceneMain()
     initUI();
 
     gen = std::mt19937(rd());
-    //yDist = std::normal_distribution<float>(340, 200.0f);
     eDist = std::uniform_real_distribution<float>(0.0f, 1.0f);
 }
 
@@ -94,14 +93,6 @@ void SceneMain::loadPicture()
     IMAGE img6;
     loadimage(&img6, "../image/background/main/ground.png", 32, 32);
     pictures.push_back(img6);
-}
-
-void SceneMain::update()
-{
-}
-
-void SceneMain::render()
-{
 }
 
 void SceneMain::handleEvents()
@@ -256,6 +247,12 @@ void SceneMain::optionsRun()
                             MainOptions::music = 4;
                             strcpy_s(introName, "../audio/music/Air_in.wav");
                             strcpy_s(musicName, "../audio/music/Air.wav");
+                        }
+                        if (msg.x >= 758 && msg.x <= 1010 && msg.y >= 280 && msg.y <= 315 && chooseMusic == true) {
+                            press.play();
+                            MainOptions::music = 5;
+                            strcpy_s(introName, "../audio/music/shenmi_in.wav");
+                            strcpy_s(musicName, "../audio/music/shenmi.wav");
                         }
                     }
                     chooseMusic = false;

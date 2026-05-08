@@ -5,7 +5,6 @@
 class AnimationPlayer :public Animation {
 public:
 	AnimationPlayer(float* x, float* y, float* speed, std::vector<IMAGE>& pictures);
-	~AnimationPlayer();
 	void run(int& op_num);
 	void reset(int& op_num);
 	void reset();
